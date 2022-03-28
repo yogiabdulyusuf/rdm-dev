@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <!-- RDM/CUSTOMER-->		
+        <record model="ir.ui.view" id="view_rdm_customer_point_form">
+            <field name="name">rdm.customer.point.form</field>
+            <field name="model">rdm.customer.point</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Point">
+                    <group colspan="4">                            
+                        <field name="customer_id"/>                                           
+                        <field name="trans_type"/>                            
+                        <field name="point"/>
+                        <field name="expired_date"/>
+                    </group>                    
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_point_tree">
+            <field name="name">rdm.customer.point.tree</field>
+            <field name="model">rdm.customer.point</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Point">
+                    <field name="customer_id"/>                                    
+                    <field name="trans_type"/>                            
+                    <field name="point"/>        
+                    <field name="expired_date"/>                        
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/ACTION -->
+        <!-- CUSTOMER -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_point">
+            <field name="name">Customer Point</field>
+            <field name="res_model">rdm.customer.point</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- MENU -->
+        
+          
+    </data>
+</odoo>

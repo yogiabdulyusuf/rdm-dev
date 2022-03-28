@@ -1,0 +1,10 @@
+<odoo>
+    <data>            	
+        <menuitem id="rdm_rules_menu" 
+                  name="Rules" 
+                  parent="jakc_redemption.rdm_promo_menu" 
+                  action="action_rdm_rules"
+                  groups="jakc_redemption.group_rdm_manager,jakc_redemption.group_rdm_officer"
+                  sequence="1"/>
+    </data>
+</odoo>

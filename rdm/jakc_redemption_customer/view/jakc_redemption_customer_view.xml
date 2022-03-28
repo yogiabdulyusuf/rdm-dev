@@ -1,0 +1,245 @@
+<odoo>
+    <data>
+        <!-- RDM/CUSTOMER-->		
+        <record model="ir.ui.view" id="view_rdm_customer_form">
+            <field name="name">rdm.customer.form</field>
+            <field name="model">rdm.customer</field>
+            <field name="arch" type="xml">
+                <form string="Customer">
+					<header>                        
+                        <button name="set_black_list" string="Black List" type="object" class="oe_highlight" states='active'/>
+                        <button name="set_remove_black_list" string="Undo Black List" type="object" class="oe_highlight" states='blacklist'/>                        
+                        <button name="set_disable" string="Disable" type="object" class="oe_highlight" states='active'/>
+						<button name="set_enable" string="Enable" type="object" class="oe_highlight" states='disable'/>
+						<button name="re_registration_customer" string="Re-registration" type="object" class="oe_highlight"  states='active'/>
+						<button name="change_password" string="Change Password" type="object" class="oe_highlight" states='active'/>
+						<button name="reset_password" string="Reset Password" confirm="are you sure, you want to reset password?" type="object" class="oe_highlight" states='active'/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,active,blacklist,disable"/>
+                    </header>	                	
+					<sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <div class="oe_button_box" name="customer_button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" option='{"terminology": "archive"'/>
+                            </button>
+                        </div>
+	                    <group>      
+                            <group string="General Information">
+                                <field name="title" attrs="{'invisible':[('contact_type','=','customer')]}"/>                        						
+                                <field name="type"/>                        
+                                <field name="old_ayc_number"/>                            
+                                <field name="ayc_number"/>
+                                <field name="card_type"/>
+                                <field name="password" groups="base.group_no_one"/>
+                                <field name="social_id"/>
+                                <!-- <field name="state"/> -->
+                                <field name="contact_type"/>     
+                                <field name="barcode"/>
+                            </group>
+                            <group string="Audit Trail">
+                                <field name="create_uid"/>
+                                <field name="create_date"/>
+                                <field name="write_uid"/>
+                                <field name="write_date"/>	           
+                            </group>                                                
+	                    </group>
+	                    <notebook colspan="4">
+	                        <page string="General">	   
+	                        	<group>
+		                            <field name="birth_place"/>                        	    	                           
+		                            <field name="birth_date"/>	                                               
+		                            <field name="gender"/>								                 
+		                            <field name="ethnic"/>								                      
+		                            <field name="religion"/>								                      
+		                            <field name="marital"/>								                           
+		                                                                                                        	                        			                        
+	                        	</group>                    	                        
+	                        </page>
+	                        <page string="Address">	                   
+								<group>
+		                            <field name="address"/>
+		                            <field name="city"/>											           
+		                            <field name="province"/>								     		                            					          
+		                            <field name="zipcode"/>										
+		                            <field name="zone"/>												                            															
+								</group>    	                      
+	                        </page>
+	                        <page string="Contact Info">					
+	                        	<group>
+		                            <field name="phone1"/>								                           
+		                            <field name="phone2"/>								                           
+		                            <field name="mobile_phone1"/>								                           
+		                            <field name="mobile_phone2"/>						
+		                            <field name="email_required"/>			                       
+		                            <field name="email" attrs="{'invisible':[('email_required','=',False)],'required':[('email_required','=',True)]}"/>                                                           	                        			                        		
+	                        	</group>				                        
+	                        </page>
+	                        <page string="Others">	               
+	                        	<group>
+	                        	    <field name="occupation"/>	                            		                           
+		                            <field name="education"/>	                            
+		                            <field name="interest"/>	                                                   
+		                            <field name="ref_id"/>	                                                   
+		                            <field name="receive_email"/>	
+		                            <field name="re_registration"/>                                                   
+		                            <field name="join_date"/>                                                                                   	                        			                        	
+	                        	</group>         	                         
+	                        </page>
+                            <page string="OTP Code">
+	                        	<field name="otp_code_ids">
+	                                <tree create="false" edit="false" delete="false">
+	                                    <field name="otp_code"/>
+	 									<field name="expired"/>
+	                                </tree>
+	                            </field>
+	                        </page>
+                            <page string="Notification">
+	                        	<field name="notif_ids" >
+	                                <tree create="false" edit="false" delete="false">
+	                                    <field name="subject"/>
+	 									<field name="type"/>
+	 									<field name="date"/>
+	 									<field name="state"/>
+	                                </tree>
+	                            </field>
+	                        </page>
+	                    </notebook>												
+					</sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>                    
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_tree">
+            <field name="name">rdm.customer.tree</field>
+            <field name="model">rdm.customer</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Customer">
+                    <field name="ayc_number"/>
+                    <field name="old_ayc_number"/>
+                    <field name="name"/>	
+                    <field name="card_type"/>		
+                    <field name="social_id"/>
+                    <field name="birth_date"/>
+                    <field name="create_uid"/>
+ 				    <field name="state"/>	                   
+                </tree>
+            </field>
+        </record>
+        
+        
+		<!--<record model="ir.ui.view" id="view_rdm_customer_graph">-->
+            <!--<field name="name">rdm.customer.graph</field>-->
+            <!--<field name="model">rdm.customer</field>-->
+            <!--<field name="type">graph</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<graph string="Customer" orientation="horizontal" type="bar">-->
+                    <!--<field name="zone" group="True"/>                    -->
+                <!--</graph>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <record model="ir.ui.view" id="graph_rdm_customer">
+            <field name="name">rdm.customer.graph</field>
+            <field name="model">rdm.customer</field>
+            <field name="arch" type="xml">
+                <graph string="Graph" orientation="horizontal" type="bar">
+                    <!--<field name="stiker_id" type="row"/>-->
+                    <!--<field name="jenis_transaksi" type="col"/>-->
+                    <field name="city" type="row"/>
+                    <field name="gender" type="row"/>
+               </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pivot_rdm_customer">
+            <field name="name">rdm.customer.pivot</field>
+            <field name="model">rdm.customer</field>
+            <field name="arch" type="xml">
+                <pivot string="Pivot">
+                    <field name="state" type="row"/>
+                    <field name="card_type" type="col"/>
+               </pivot>
+            </field>
+        </record>
+
+        <!-- RDM/ACTION -->
+        <!-- CUSTOMER -->
+        <record model="ir.ui.view" id="view_rdm_customer_filter">
+            <field name="name">rdm.customer.select</field>
+            <field name="model">rdm.customer</field>
+            <field name="arch" type="xml">
+                <search string="Search Customer">
+				   <field name="ayc_number"/>
+				   <field name="old_ayc_number"/>              	
+                   <field name="name"/>                                     
+				   <field name="social_id"/>
+				   <field name="birth_date"/>                   	
+                   <separator/>
+                   <filter string="Customer" name="contact_type_customer" domain="[('contact_type','=','customer')]"/>
+                   <filter string="Tenant Contact" name="contact_type_tenant" domain="[('contact_type','=','tenant')]"/>
+                   <filter string="Black List" name="blacklist_customer" domain="[('state','=','blacklist')]"/>
+                   <filter string="Disable" name="disable_customer" domain="[('state','=','disable')]"/>
+               </search>
+            </field>
+        </record>
+
+        <record id="action_rdm_customer" model="ir.actions.act_window">
+            <field name="name">Customer</field>
+            <field name="res_model">rdm.customer</field>
+            <field name="view_type">form</field>
+            <field name="context">{"search_default_contact_type_customer":1}</field>
+            <field name="view_mode">tree,form,graph,pivot</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+              </p><p>
+                OpenERP helps you easily track all activities related to
+                a customer; discussions, history of business opportunities,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+        
+		<!--<record model="ir.actions.act_window" id="action_rdm_customer">-->
+            <!--<field name="name">Customer</field>           -->
+            <!--<field name="type">ir.actions.act_window</field>-->
+            <!--<field name="res_model">rdm.customer</field>-->
+            <!--<field name="view_mode">tree,form</field>		-->
+			<!--<field name="context">{"search_default_contact_type_customer":1}</field>            -->
+           	<!--<field name="search_view_id" ref="view_rdm_customer_filter"/>           -->
+            <!--<field name="help" type="html">-->
+              <!--<p class="oe_view_nocontent_create">-->
+                <!--Click to add a contact in your address book.-->
+              <!--</p><p>-->
+                <!--OpenERP helps you easily track all activities related to-->
+                <!--a customer; discussions, history of business opportunities,-->
+                <!--documents, etc.-->
+              <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+		<!--<record model="ir.actions.act_window.view" id="action_rdm_customer_tree" >-->
+            <!--<field name="sequence" eval="0"/>-->
+            <!--<field name="view_mode">tree</field>-->
+            <!--<field name="view_id" ref="view_rdm_customer_tree"/>             			        -->
+            <!--<field name="act_window_id" ref="action_rdm_customer"/>-->
+        <!--</record>-->
+        <!--<record model="ir.actions.act_window.view" id="action_rdm_customer_form" >-->
+            <!--<field name="sequence" eval="1"/>-->
+            <!--<field name="view_mode">form</field>-->
+            <!--<field name="view_id" ref="view_rdm_customer_form"/>             		            		          -->
+            <!--<field name="act_window_id" ref="action_rdm_customer"/>-->
+        <!--</record>                         -->
+
+
+    </data>
+</odoo>

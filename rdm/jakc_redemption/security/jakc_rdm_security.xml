@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record model="ir.module.category" id="module_redemption">
+            <field name="name">Redemption and Management</field>
+            <field name="sequence">5</field>
+        </record>
+
+        <record model="res.groups" id="base.group_user">
+            <field name="comment">Basic User</field>
+            <field name="category_id" ref="module_redemption"/>
+        </record>
+
+        <record id="group_rdm_operator" model="res.groups">
+            <field name="name">Redemption Operator</field>
+            <field name="category_id" ref="module_redemption"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="comment">the user will be able to create and update redemption and point transaction.</field>
+        </record>
+
+        <record id="group_rdm_tenant_mgmt" model="res.groups">
+            <field name="name">Redemption Operator and Tenant Management</field>
+            <field name="category_id" ref="module_redemption"/>
+            <field name="implied_ids" eval="[(4, ref('group_rdm_operator'))]"/>
+            <field name="comment">the user will be able to create and update redemption and point transaction include tenant management.</field>
+        </record>
+
+        <record id="group_rdm_event_mgmt" model="res.groups">
+            <field name="name">Redemption Operator and Event Management</field>
+            <field name="category_id" ref="module_redemption"/>
+            <field name="implied_ids" eval="[(4, ref('group_rdm_operator'))]"/>
+            <field name="comment">the user will be able to create and update redemption and point transaction include event management</field>
+        </record>
+
+        <record id="group_rdm_officer" model="res.groups">
+            <field name="name">Redemption Officer</field>
+            <field name="comment">the user will be able as operator, manage parameters and have access to delete redemption and point transaction.</field>
+            <field name="category_id" ref="module_redemption"/>
+            <field name="implied_ids" eval="[(4, ref('group_rdm_operator'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record id="group_rdm_manager" model="res.groups">
+            <field name="name">Redemption Manager</field>
+            <field name="comment">the user will have an access all features on Redemption Module.</field>
+            <field name="category_id" ref="module_redemption"/>
+            <field name="implied_ids" eval="[(4, ref('group_rdm_officer'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+</odoo>

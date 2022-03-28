@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_rdm_customer_manager,report.rdm.customer.manager,model_report_rdm_customer,jakc_redemption.group_rdm_manager,1,1,1,1
+access_report_rdm_customer_operator,report.rdm.customer.operator,model_report_rdm_customer,jakc_redemption.group_rdm_operator,1,0,0,0
+

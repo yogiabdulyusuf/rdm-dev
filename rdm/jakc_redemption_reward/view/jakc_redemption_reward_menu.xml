@@ -1,0 +1,15 @@
+<odoo>
+    <data>    	       
+        <menuitem id="rdm_reward_menu" 
+                  name="Reward" 
+                  parent="jakc_redemption.rdm_reward_menu"  
+                  groups="jakc_redemption.group_rdm_manager,jakc_redemption.group_rdm_officer,jakc_redemption.group_rdm_operator"
+                  action="action_rdm_reward" sequence="2"/>
+
+        <menuitem id="rdm_reward_trans_menu" 
+                  name="Transaction" 
+                  parent="jakc_redemption.rdm_reward_menu"  
+                  groups="jakc_redemption.group_rdm_manager,jakc_redemption.group_rdm_officer,jakc_redemption.group_rdm_operator"
+                  action="action_rdm_reward_trans" sequence="3"/>        
+    </data>
+</odoo>

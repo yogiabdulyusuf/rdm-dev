@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rdm_tenant_manager,rdm.tenant.manager,model_rdm_tenant,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_tenant_officer,rdm.tenant.officer,model_rdm_tenant,jakc_redemption.group_rdm_officer,1,1,1,1
+access_rdm_tenant_tenant_mgmt,rdm.tenant.tenent.mgmt,model_rdm_tenant,jakc_redemption.group_rdm_tenant_mgmt,1,1,1,0
+access_rdm_tenant_operator,rdm.tenant.operator,model_rdm_tenant,jakc_redemption.group_rdm_operator,1,0,0,0
+
+access_rdm_tenant_message_manager,rdm.tenant.message.manager,model_rdm_tenant_message,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_tenant_message_officer,rdm.tenant.message.officer,model_rdm_tenant_message,jakc_redemption.group_rdm_officer,1,1,1,1
+access_rdm_tenant_message_tenant_mgmt,rdm.tenant.message.tenant.mgmt,model_rdm_tenant_message,jakc_redemption.group_rdm_tenant_mgmt,1,1,1,0
+access_rdm_tenant_message_operator,rdm.tenant.message.operator,model_rdm_tenant_message,jakc_redemption.group_rdm_operator,1,0,0,0

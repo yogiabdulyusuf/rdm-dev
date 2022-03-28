@@ -1,0 +1,20 @@
+{
+    'name': 'Redemption and Point Management',
+    'version': '1.0.1',
+    'category': 'Generic Modules/Redemption And Point Management',
+    'summary': 'Redemption and Point Management',
+    'description': "",
+    'depends': ['base_setup','base','hr','mail'],
+    'data': [
+        'security/jakc_rdm_security.xml',
+        'security/ir.model.access.csv',
+        'view/jakc_redemption_view.xml',
+        'view/jakc_redemption_menu.xml',
+        'view/jakc_redemption_config_view.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'qweb': [],
+    'website': 'https://weha-id.com',
+}

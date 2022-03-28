@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem id="rdm_tenant_menu" 
+                  name="Tenant" 
+                  parent="jakc_redemption.rdm_master_menu"  
+                  action="action_rdm_tenant" 
+                  sequence="2"/>    
+    </data>
+</odoo>

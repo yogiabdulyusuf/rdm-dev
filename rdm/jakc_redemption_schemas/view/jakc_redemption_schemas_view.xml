@@ -1,0 +1,466 @@
+<odoo>
+    <data>
+                       
+		<!-- RDM/schemas SEGMENT -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_segment_form">
+            <field name="name">rdm.schemas.segment.form</field>
+            <field name="model">rdm.schemas.segment</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Schemas Segment">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="age_segment"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+
+		<!-- RDM/schemas GENDER -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_gender_form">
+            <field name="name">rdm.schemas.gender.form</field>
+            <field name="model">rdm.schemas.gender</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Schemas Gender">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="gender_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+
+		<!-- RDM/schemas RELIGION -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_religion_form">
+            <field name="name">rdm.schemas.religion.form</field>
+            <field name="model">rdm.schemas.religion</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas Religion">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="religion_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+		<!-- RDM/schemas ETHNIC -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_ethnic_form">
+            <field name="name">rdm.schemas.ethnic.form</field>
+            <field name="model">rdm.schemas.ethnic</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas Ethnic">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="ethnic_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+                        
+        <!-- RDM/schemas TENANT -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_tenant_form">
+            <field name="name">rdm.schemas.tenant.form</field>
+            <field name="model">rdm.schemas.tenant</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas Tenant">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="tenant_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+		<!-- RDM/schemas MARITAL -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_marital_form">
+            <field name="name">rdm.schemas.marital.form</field>
+            <field name="model">rdm.schemas.marital</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas Marital">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="marital_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+                                                
+		<!-- RDM/schemas INTEREST -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_interest_form">
+            <field name="name">rdm.schemas.interest.form</field>
+            <field name="model">rdm.schemas.interest</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas Interest">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="interest_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+		<!-- RDM/schemas CARD TYPE -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_card_type_form">
+            <field name="name">rdm.schemas.card.type.form</field>
+            <field name="model">rdm.schemas.card.type</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas Card Type">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="card_type_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        
+		<!-- RDM/schemas TENANT TYPE -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_tenant_category_form">
+            <field name="name">rdm.schemas.tenant.category.form</field>
+            <field name="model">rdm.schemas.tenant.category</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas Tenant Category">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="tenant_category_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+		<!-- RDM/schemas AYC PARTICIPANT -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_ayc_participant_form">
+            <field name="name">rdm.schemas.ayc.participant.form</field>
+            <field name="model">rdm.schemas.ayc.participant</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Schemas AYC Participant">  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="participant_id"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+                         
+        <!-- RDM/schemas RULES -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_rules_form">
+            <field name="name">rdm.schemas.rules.form</field>
+            <field name="model">rdm.schemas.rules</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">                 
+                <form string="schemas Rules">
+                    <header>
+	                    <button name="trans_set_global" string="Set Global" type="object" class="oe_highlight"/>
+	                    <button name="trans_unset_global" string="Unset Global" type="object" class="oe_highlight"/>                    
+                 	</header>
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="rules_id"/>                  
+                        <field name="is_global"/>       
+                        <field name="schemas"/>                            
+                    </group>
+                </form>
+            </field>
+        </record>
+                   
+        <!-- RDM/SCHEMAS BLAST -->		
+        <record model="ir.ui.view" id="view_rdm_schemas_blast_form">
+            <field name="name">rdm.schemas.blast.form</field>
+            <field name="model">rdm.schemas.blast</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Schemas Blast" >
+                	<header>
+                    	<button name="trans_ready" string="Ready To Send" type="object" class="oe_highlight"/>
+                    </header>                  
+                    <group>
+                    	<field name="schemas_id"/>                           
+                        <field name="schedule"/>
+                        <field name="type"/>
+                        <field name="description"/>                        
+                        <field name="state"/>                            
+                    </group>
+                    <notebook>
+	                   	<page string="Customers">
+	                    	<field name="customer_schemas_blast_ids" widget="many2many" nolabel="1">
+	                    		<tree>
+	                    			<field name="name"/>	                    		
+	                    		</tree>
+	                    	</field>
+	                   	</page>	                   	
+                    </notebook>
+                </form>
+            </field>
+        </record>      
+                              
+        <!-- RDM/schemas-->		
+        <record model="ir.ui.view" id="view_rdm_schemas_form">
+            <field name="name">rdm.schemas.form</field>
+            <field name="model">rdm.schemas</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="schemas" >  
+                    <header>                        
+                        <button name="trans_review" string="Reques for Review" type="object" class="oe_highlight" states="waiting"/>                                                                                              
+                        <button name="trans_start" string="Start schemas" type="object" class="oe_highlight" states="review"/>                                                                       
+                        <button name="trans_pause" string="Pause schemas" type="object" class="oe_highlight" states="open"/>                        
+                        <button name="trans_close" string="End schemas" type="object" class="oe_highlight" states="open"/>                                                                                                                       
+                        <button name="trans_reset" string="Re-open schemas" type="object" class="oe_highlight" states="pause,done"/>                                                         
+                        <button name="trans_print" string="Print schemas" type="object" class="oe_highlight" states="waiting,review,active,done"/>                                                         
+                    </header>
+                    <sheet>
+	                    <group colspan="4">
+							<group string="General Information" colspan="4">
+	                       		<field name="name"/>
+	                       		<field name="type"/>	                       		
+	                       		<field name="calculation"/>	                       	
+	                       		<field name="description"/>
+		                        <field name="desc_email" widget="html"/>                        
+		                        <field name="desc_sms"/>                                                		                    	                       															
+							</group>
+                        </group>
+                        <group string="Additional Information" colspan="2">
+                            <group>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="last_redeem"/>
+                                <field name="draw_date" attrs="{'invisible':[('type','=','point')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Coupon Information">
+                                <label for="max_spend" string="Max Spend Amount"/>
+                                <div name="div_type">
+                                    <field class="oe_inline" name="max_spend_amount_global" nolabel="1"/>
+                                    <field class="oe_inline" name="max_spend_amount" nolabel="1"/>
+                                </div>
+                                <label for="max_coupon" string="Max Coupon #"/>
+                                <div name="div_type">
+                                    <field class="oe_inline" name="max_coupon_global" nolabel="1"/>
+                                    <field class="oe_inline" name="max_coupon" nolabel="1"/>
+                                </div>
+                                <field name="coupon_spend_amount" attrs="{'invisible':[('type','=','point')]}" />
+                                <field name="limit_coupon"/>
+                                <field name="limit_coupon_per_periode"/>
+                                <field name="min_coupon"/>
+                            </group>
+                            <group string="Point Information">
+                                <label for="max_point" string="Max Point #"/>
+                                <div name="div_type">
+                                    <field class="oe_inline" name="max_point_global" nolabel="1"/>
+                                    <field class="oe_inline" name="max_point" nolabel="1"/>
+                                </div>
+                                <field name="point_spend_amount"/>
+                                <field name="limit_point"/>
+                                <field name="limit_point_per_periode"/>
+                                <field name="min_point"/>
+                                <field name="point_expired_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Reward Information">
+                                <field name="rdm_reward_ids"/>
+                                <field name="reward_spend_amount"/>
+                                <field name="limit_reward"/>
+                            </group>
+
+                        </group>
+                        <group string="Receipt Header and Footer" colspan="4">
+                                <field name="receipt_header"/>
+                                <field name="receipt_footer"/>
+                            </group>
+                        <group string="State Information" colspan="4">
+                            <field name="state"/>
+                        </group>
+	                    <notebook colspan="4">
+	                        <page string="Image">
+	                            <field name="image1" widget="image"/>                                
+	                        </page>                
+	                        <page string="Filter">
+	                        	<notebook>
+									<page string="Segment">
+			                            <field name="segment_ids" widget="one2many_list" nolabel="1" context="{'schemas_id': active_id}"/>
+			                        </page>                        
+			                        <page string="Gender">
+			                            <field name="gender_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}"/>
+			                        </page>                        
+			                        <page string="Religion">
+			                            <field name="religion_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}"/>
+			                        </page>                                                
+			                        <page string="Ethnic">
+			                            <field name="ethnic_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}"/>
+			                        </page>                        
+			                        <page string="Tenant">
+			                            <field name="tenant_ids" widget="one2many_list" nolabel="1" context="{'schemas_id': active_id}"/>
+			                        </page>                        
+			                        <page string="Marital">
+			                            <field name="marital_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}"/>
+			                        </page>                        
+			                        <page string="Interest">
+			                            <field name="interest_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}"/>
+			                        </page>                        
+			                        <page string="Card Type">
+			                            <field name="card_type_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}">
+			                                <tree>
+			                                    <field name="card_type_id"/>
+			                                </tree>                            
+			                            </field>
+			                        </page>               
+			                        <page string="Tenant Category">
+			                            <field name="tenant_category_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}">
+			                                <tree>
+			                                    <field name="tenant_category_id"/>
+			                                </tree>                                                           
+			                            </field>
+			                        </page>
+									<page string="AYC Participant">
+			                            <field name="ayc_participant_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}">
+			                                <tree>
+			                                    <field name="participant_id"/>
+			                                </tree>                                                           
+			                            </field>
+			                        </page>     	          	                        		
+	                        	</notebook>
+	                        </page>                        
+	                                                  
+	                        <page string="Rules">	                            
+	                            <field name="rules_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}">
+	                                <tree>
+	                                    <field name="rules_id"/>
+	 									<field name="schemas"/>
+	 									<field name="is_global"/> 	 								                                 
+	                                </tree>                                                                                          
+	                            </field>
+	                        </page>
+	                        <page string="Blast">
+	                        	<field name="blast_ids" widget="one2many_list" nolabel="1"  context="{'schemas_id': active_id}">
+	                                <tree>
+	                                    <field name="schedule"/>
+	 									<field name="state"/>                                   
+	                                </tree>                                                                                          
+	                            </field>
+	                        </page>
+	                    </notebook>                    	                    
+                    </sheet>                   
+                </form>
+            </field>
+        </record>
+		
+	        
+        <record model="ir.ui.view" id="view_rdm_schemas_tree">
+            <field name="name">rdm.schemas.tree</field>
+            <field name="model">rdm.schemas</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="schemas">
+                    <field name="name"/>      
+                    <field name="calculation"/>                                           
+                    <field name="start_date"/>
+                    <field name="end_date"/>                     
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        
+		<record model="ir.ui.view" id="view_rdm_schemas_filter">
+            <field name="name">Schemas Search</field>
+            <field name="model">rdm.schemas</field>
+            <field name="arch" type="xml">
+                <search string="Search Schemas">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>   
+         
+		<!-- BLAST CUSTOMER POPUP WINDOW -->        
+        <record model="ir.ui.view" id="view_rdm_schemas_blast_customer_form">
+            <field name="name">rdm.schemas.blast.customer.form</field>
+            <field name="model">rdm.schemas.blast.customer</field>						            					
+            <field name="arch" type="xml">
+                <form string="Redemption Blast Customer" >  
+                    <group>                                                                                                    
+                        <field name="search_type"/>                        
+                        <field name="customer_id" attrs="{'invisible':[('search_type','!=','customer')],'required':[('search_type','=','customer')]}"/>
+                        <field name="gender_id" attrs="{'invisible':[('search_type','!=','gender')],'required':[('search_type','=','gender')]}"/>
+                        <field name="ethnic_id" attrs="{'invisible':[('search_type','!=','ethnic')],'required':[('search_type','=','ethnic')]}"/>
+                        <field name="religion_id" attrs="{'invisible':[('search_type','!=','religion')],'required':[('search_type','=','religion')]}"/>
+                        <field name="marital_id" attrs="{'invisible':[('search_type','!=','marital')],'required':[('search_type','=','marital')]}"/>
+                        <field name="education_id" attrs="{'invisible':[('search_type','!=','education')],'required':[('search_type','=','education')]}"/>
+                        <field name="interest_id" attrs="{'invisible':[('search_type','!=','interest')],'required':[('search_type','=','interest')]}"/>
+                        <field name="occupation_id" attrs="{'invisible':[('search_type','!=','occupation')],'required':[('search_type','=','occupation')]}"/>
+                        <field name="zone_id" attrs="{'invisible':[('search_type','!=','zone')],'required':[('search_type','=','zone')]}"/>                        
+                    </group>                    
+                    <footer>
+                        <button name="add_customer" string="Add Customer" type="object" class="oe_highlight"/>    
+                        or                   
+                        <button string="Cancel" class="oe_link" special="cancel"/>                    
+                    </footer>                    
+                </form>
+            </field>
+        </record>	       
+                
+        <!-- RDM/ACTION -->
+        <!-- PROMO -->
+		<record model="ir.actions.act_window" id="action_rdm_promo_schemas">
+            <field name="name">Promo Schemas</field>
+            <field name="res_model">rdm.schemas</field>
+			<field name="context">{'default_type':'promo'}</field>				         
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','promo')]</field>		           
+			<field name="search_view_id" ref="view_rdm_schemas_filter"/>            
+        </record>		
+        
+        <!-- POINT -->       
+		<record model="ir.actions.act_window" id="action_rdm_point_schemas">
+            <field name="name">Point Schemas</field>
+            <field name="res_model">rdm.schemas</field>
+			<field name="context">{'default_type':'point'}</field>			          
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','point')]</field>			           
+			<field name="search_view_id" ref="view_rdm_schemas_filter"/>            
+        </record>
+                
+		<!-- RDM/VIEW -->
+		<!-- PROMO -->
+		<record model="ir.actions.act_window.view" id="action_rdm_promo_tree" >
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_rdm_schemas_tree"/>             			        
+            <field name="act_window_id" ref="action_rdm_promo_schemas"/>
+        </record>        
+        
+        <record model="ir.actions.act_window.view" id="action_rdm_promo_form" >
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_rdm_schemas_form"/> 		            		          
+            <field name="act_window_id" ref="action_rdm_promo_schemas"/>
+        </record>
+        
+		<!-- POINT -->
+		<record model="ir.actions.act_window.view" id="action_rdm_point_tree" >
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_rdm_schemas_tree"/>             			        
+            <field name="act_window_id" ref="action_rdm_point_schemas"/>
+        </record>        
+        
+        <record model="ir.actions.act_window.view" id="action_rdm_point_form" >
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_rdm_schemas_form"/> 		            		          
+            <field name="act_window_id" ref="action_rdm_point_schemas"/>
+        </record>
+					  
+			      
+    </data>
+</odoo>

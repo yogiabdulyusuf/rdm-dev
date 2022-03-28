@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rdm_draw_manager,rdm.draw.manager,model_rdm_draw,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_draw_officer,rdm.draw.officer,model_rdm_draw,jakc_redemption.group_rdm_officer,1,0,0,0
+access_rdm_draw_operator,rdm.draw.operator,model_rdm_draw,jakc_redemption.group_rdm_operator,0,0,0,0
+
+
+access_rdm_draw_detail_manager,rdm.draw.detail.manager,model_rdm_draw_detail,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_draw_detail_officer,rdm.draw.detail.officer,model_rdm_draw_detail,jakc_redemption.group_rdm_officer,1,0,0,0
+access_rdm_draw_detail_operator,rdm.draw.detail.operator,model_rdm_draw_detail,jakc_redemption.group_rdm_operator,0,0,0,0

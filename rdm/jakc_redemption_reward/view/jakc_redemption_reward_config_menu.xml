@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem id="rdm_reward_config" 
+                  name="Reward Settings" 
+                  parent="base.menu_config" 
+                  sequence="16" 
+                  action="action_reward_config"/>
+    </data>
+</odoo>

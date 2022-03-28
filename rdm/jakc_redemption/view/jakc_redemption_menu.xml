@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="rdm_main_menu" 
+                  name="Redemption"
+                  groups="group_rdm_manager,group_rdm_officer,group_rdm_operator"
+                  web_icon="jakc_redemption,static/description/icon.png"/>
+
+            <menuitem name="Master" id="rdm_master_menu" parent="rdm_main_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator" sequence="1"/>
+            <menuitem name="Promo" id="rdm_promo_menu" parent="rdm_main_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator" sequence="2"/>
+            <menuitem name="Reward" id="rdm_reward_menu" parent="rdm_main_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator" sequence="3"/>
+            <menuitem name="Point" id="rdm_point_menu" parent="rdm_main_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator" sequence="4"/>
+            <menuitem name="Report" id="rdm_report_menu" parent="rdm_main_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator" sequence="5"/>
+            <menuitem name="Configuration" id="rdm_configuration_menu" parent="rdm_main_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator" sequence="99"/>
+
+
+            <!-- RDM/MENU -->
+            <!-- GENERAL -->
+            <menuitem name="Customer" id="rdm_general_customer_menu" parent="rdm_configuration_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator"/>        
+            <menuitem name="Tenant" id="rdm_general_tenant_menu" parent="rdm_configuration_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator"/>
+            <menuitem name="Bank" id="rdm_general_bank_menu" parent="rdm_configuration_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator"/>
+            <menuitem name="AYC" id="rdm_general_ayc_menu" parent="rdm_configuration_menu" groups="group_rdm_manager,group_rdm_officer,group_rdm_operator"/>	
+                
+            <menuitem id="rdm_customer_type_menu" name="Customer Type" parent="rdm_general_customer_menu"  action="action_rdm_customer_type" sequence="1"/>
+            <menuitem id="rdm_customer_ethnic_menu" name="Customer Ethnic" parent="rdm_general_customer_menu"  action="action_rdm_customer_ethnic" sequence="2"/>
+            <menuitem id="rdm_customer_religion_menu" name="Customer Religion" parent="rdm_general_customer_menu"  action="action_rdm_customer_religion" sequence="3"/>
+            <menuitem id="rdm_customer_gender_menu" name="Customer Gender" parent="rdm_general_customer_menu"  action="action_rdm_customer_gender" sequence="4"/>
+            <menuitem id="rdm_customer_marital_menu" name="Customer Marital" parent="rdm_general_customer_menu"  action="action_rdm_customer_marital" sequence="5"/>
+            <menuitem id="rdm_customer_zone_menu" name="Customer Zone" parent="rdm_general_customer_menu"  action="action_rdm_customer_zone" sequence="6"/>
+            <menuitem id="rdm_customer_education_menu" name="Customer Education" parent="rdm_general_customer_menu"  action="action_rdm_customer_education" sequence="7"/>
+            <menuitem id="rdm_customer_interest_menu" name="Customer Interest" parent="rdm_general_customer_menu"  action="action_rdm_customer_interest" sequence="8"/>
+            <menuitem id="rdm_customer_occupation_menu" name="Customer Occupation" parent="rdm_general_customer_menu"  action="action_rdm_customer_occupation" sequence="9"/>
+            <menuitem id="rdm_province_menu" name="Province" parent="rdm_general_customer_menu"  action="action_rdm_province" sequence="10"/>
+            <menuitem id="rdm_city_menu" name="City" parent="rdm_general_customer_menu"  action="action_rdm_city" sequence="11"/>                
+            <menuitem id="rdm_promo_segment_menu" name="Age Segment" parent="rdm_general_customer_menu" action="action_rdm_age_segment" sequence="1"/>       
+            <menuitem id="rdm_tenant_type_menu" name="Category" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_category" sequence="1"/>
+            <menuitem id="rdm_tenant_grade_menu" name="Grade" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_grade" sequence="2"/>
+            <menuitem id="rdm_tenant_title_menu" name="Title" parent="rdm_general_tenant_menu"  action="action_rdm_tenant_title" sequence="3"/>
+            <menuitem id="rdm_building_floor_menu" name="Floor" parent="rdm_general_tenant_menu"  action="action_rdm_building_floor" sequence="3"/>
+
+            <menuitem id="rdm_bank_menu" name="Bank" parent="rdm_general_bank_menu"  action="action_rdm_bank" sequence="1"/> 
+            <menuitem id="rdm_bank_card_type_meny" name="Bank Card Type" parent="rdm_general_bank_menu"  action="action_rdm_bank_card_type" sequence="1"/>       
+            <!-- AYC -->
+            <menuitem id="rdm_card_type_menu" name="Card Type" parent="rdm_general_ayc_menu"  action="action_rdm_card_type" sequence="1"/>
+
+    </data>
+</odoo>

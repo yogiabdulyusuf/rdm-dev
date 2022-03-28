@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+	 	<record forcecreate="True" id="ir_cron_customer_blast_action" model="ir.cron">
+            <field name="name">Customer Blast Scheduler</field>
+            <field name="model_id" ref="model_rdm_schemas"/>
+            <field name="state">code</field>
+            <field name="code">model.start_blast()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+        </record>
+
+		<!--
+		<record forcecreate="True" id="ir_cron_customer_blast_action" model="ir.cron">
+			<field name="name">Customer Blast Scheduler</field>
+			<field name="active">True</field>
+			<field name="user_id">1</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">minutes</field>
+			<field name="numbercall">-1</field>
+			<field name="doall">False</field>
+			<field name="model" eval="'rdm.schemas'"/>
+			<field name="function" eval="'start_blast'"/>
+			<field name="args" eval="'()'"/>
+		</record>
+		-->
+
+		<record forcecreate="True" id="ir_cron_schemas_close_action" model="ir.cron">
+            <field name="name">Schemas Close Scheduler</field>
+            <field name="model_id" ref="model_rdm_schemas"/>
+            <field name="state">code</field>
+            <field name="code">model.close_schemas_scheduler()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+        </record>
+
+		<!--
+		<record forcecreate="True" id="ir_cron_schemas_close_action" model="ir.cron">
+			<field name="name">Schemas Close Scheduler</field>
+			<field name="active">True</field>
+			<field name="user_id">1</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="numbercall">-1</field>
+			<field name="doall">False</field>
+			<field name="model" eval="'rdm.schemas'"/>
+			<field name="function" eval="'close_schemas_scheduler'" />
+			<field name="args" eval="'()'"/>
+		</record>		
+		-->
+	</data>
+</odoo>

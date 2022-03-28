@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- RDM/CUSTOMER COUPON-->		
+        <record model="ir.ui.view" id="view_rdm_customer_coupon_form">
+            <field name="name">rdm.customer.coupon.form</field>
+            <field name="model">rdm.customer.coupon</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Coupon">
+                    <group colspan="4">                            
+                        <field name="customer_id"/>                                            
+                        <field name="trans_type"/>          
+                        <field name="coupon"/>	                                          
+                    </group>
+					<notebook colspan="4">
+	                    <page string="Coupon List">
+	                        <field name="customer_coupon_detail_ids" widget="one2many_list" nolabel="1">
+	                            <tree>                   
+	                            	<field name="coupon_code"/>                                            
+	                                <field name="expired_date"/>                                
+	                            </tree>                    
+	                        </field>
+	                    </page>
+                	</notebook>	                   
+                </form>
+            </field>
+        </record>
+		
+        
+     	<record model="ir.ui.view" id="view_rdm_customer_coupon_tree">
+            <field name="name">rdm.customer.coupon.tree</field>
+            <field name="model">rdm.customer.coupon</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Coupon">
+                	<field name="customer_id"/>                                    
+                    <field name="trans_type"/>        
+                    <field name="coupon"/>	                                        
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/CUSTOMER COUPON DETAIL-->	                                                          
+        <record model="ir.ui.view" id="view_rdm_customer_coupon_detail_form">
+            <field name="name">rdm.customer.coupon.detail.form</field>
+            <field name="model">rdm.customer.coupon.detail</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Coupon Detail">
+                    <group colspan="4">                            
+						<field name="customer_coupon_id" />                                    
+	                    <field name="coupon_code" />        
+	                    <field name="expired_date" />
+	                    <field name="state"/>	                                          
+	               	</group>                           
+                </form>
+            </field>
+        </record>
+        
+         <record model="ir.ui.view" id="view_rdm_customer_coupon_detail_tree">
+            <field name="name">rdm.customer.coupon.detail.tree</field>
+            <field name="model">rdm.customer.coupon.detail</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Coupon Detail">
+                	<field name="customer_coupon_id"/>                                    
+                    <field name="coupon_code"/>        
+                    <field name="expired_date"/>
+                    <field name="state"/>	                                        
+                </tree>
+            </field>
+        </record>
+        
+         
+		<record model="ir.ui.view" id="view_rdm_customer_coupon_detail_filter">
+            <field name="name">Coupon Detail Search</field>
+            <field name="model">rdm.customer.coupon.detail</field>
+            <field name="arch" type="xml">
+                <search string="Search Transaction">
+                	<field name="coupon_code"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- RDM/ACTION -->
+        <!-- CUSTOMER COUPON -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_coupon">
+            <field name="name">Customer Coupon</field>
+            <field name="res_model">rdm.customer.coupon</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+	    <!-- CUSTOMER COUPON DETAIL -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_coupon_detail">
+            <field name="name">Customer Coupon Detail</field>
+            <field name="res_model">rdm.customer.coupon.detail</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+       
+
+    </data>
+</odoo>

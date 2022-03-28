@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <menuitem id="rdm_point_adj_menu" 
+                  name="Adjustment" 
+                  parent="jakc_redemption.rdm_point_menu"  
+                  action="action_rdm_point_adj" 
+                  groups="jakc_redemption.group_rdm_manager,jakc_redemption.group_rdm_officer,jakc_redemption.group_rdm_operator"
+                  sequence="3"/>
+    </data>
+</odoo>

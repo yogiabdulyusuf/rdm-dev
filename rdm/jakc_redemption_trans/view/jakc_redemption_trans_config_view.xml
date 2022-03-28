@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<!-- Inherit Form View to Modify it -->
+        <record id="res_company_settings" model="ir.ui.view">
+           <field name="name">Res Company Settings</field>
+           <field name="model">res.company</field>
+           <field name="inherit_id" ref="base.view_company_form"/>
+           <field name="arch" type="xml">
+
+               <xpath expr="//notebook" position="inside">
+                   <!-- Add your fields or attributes here -->
+                   <page string="Transaction Settings">
+
+                        <separator string="Transaction Configuration"/>
+	     				<group name="Transaction">
+	     					<group>	     						
+	     						<field name="trans_delete_allowed"/>
+	     						<field name="trans_delete_approver"/>
+	     						<field name="trans_email_tmpl"/>
+	     					</group>
+	     				</group>
+	     			 </page>
+
+               </xpath>
+
+           </field>
+        </record>
+
+	</data>
+
+</odoo>

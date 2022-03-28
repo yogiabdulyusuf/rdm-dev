@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	    <record id="view_customer_config_settings" model="ir.ui.view">
+	        <field name="name">Customer Config Settings</field>
+	        <field name="model">res.company</field>
+           	<field name="inherit_id" ref="base.view_company_form"/>
+	        <field name="arch" type="xml">
+
+				<xpath expr="//notebook" position="inside">
+                   <!-- Add your fields or attributes here -->
+                   <page string="Customer Settings">
+
+					   	<separator string="Customer Configuration"/>
+	     				<group name="Customer">
+	     					<group>
+	     						<field name="enable_new_member"/>
+	     						<field name="new_member_email_tmpl"/>	     						
+	     						<field name="new_member_point"/>	     						
+	     						<field name="new_member_expired_duration"/>	     					
+	     						<field name="enable_re_registration"/>
+	     						<field name="re_registration_email_tmpl"/>	     						
+	     						<field name="re_registration_point"/>	     						
+	     						<field name="re_registration_expired_duration"/>	     					
+	     						<field name="enable_referal"/>
+	     						<field name="referal_point"/>
+	     						<field name="referal_email_tmpl"/>
+	     						<field name="expired_duration"/>	   
+	     						<field name="request_reset_password_email_tmpl"/>  							     					
+	     						<field name="reset_password_email_tmpl"/>
+	     					</group>
+	     				</group>
+	     				<separator string="Duplicate Check Method"/>
+	     				<group name="Duplicate">
+	     					<group>
+	     						<field name="duplicate_email"/>
+	     						<field name="duplicate_social_id"/>
+	     					</group>
+	     				</group>    
+
+				   </page>
+
+               </xpath>
+	        </field>
+	    </record>
+
+	</data>
+</odoo>

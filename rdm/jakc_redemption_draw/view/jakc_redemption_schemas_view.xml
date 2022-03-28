@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_rdm_draw_form_inherit_rdm_schemas" model="ir.ui.view">
+            <field name="name">rdm.draw.form.inherit.rdm.schemas</field>
+            <field name="model">rdm.schemas</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="jakc_redemption_schemas.view_rdm_schemas_form"/>					
+            <field name="arch" type="xml">
+                <header position="inside">
+                    <button name="trans_generate_draw_detail" string="Generate Draw Detail" type="object" class="oe_highlight"/>
+                	<button name="trans_clear_draw_detail" string="Clear Draw Detail" type="object" class="oe_highlight"/>
+                </header>
+				<notebook position="inside">
+                    <page string="Draws">                    	
+                        <field name="draw_ids" widget="one2many_list" nolabel="1">                            
+                            <tree string="Draws">                                                                                                
+                                <field name="name"/>                                
+								<field name="quantity"/>                                	
+                                <field name="sequence"/>                                                                                                                                                                                                                                                                     
+                            </tree>                    
+                        </field>
+                    </page> 
+                    <page string="Draw Detail">
+                        <field name="draw_detail_ids" widget="one2many_list" nolabel="1">
+                            <tree string="Draw Details">
+                                <field name="draw_id"/>
+                                <field name="coupon_id" />
+                                <field name="customer_id"/>                                
+                                <field name="sequence"/>
+                                <field name="iface_show"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>   
+                </notebook>			
+            </field>
+        </record>
+    </data>
+</openerp>

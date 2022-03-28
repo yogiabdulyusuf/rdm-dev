@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rdm_point_adj_manager,rdm.point.adj.manager,model_rdm_point_adj,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_point_adj_officer,rdm.point.adj.officer,model_rdm_point_adj,jakc_redemption.group_rdm_officer,1,0,0,0
+access_rdm_point_adj_operator,rdm.point.adj.operator,model_rdm_point_adj,jakc_redemption.group_rdm_operator,0,0,0,0

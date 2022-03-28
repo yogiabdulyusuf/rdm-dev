@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="act_customer_trans" model="ir.actions.act_window">
+            <field name="name">Redeems</field>
+            <field name="res_model">rdm.trans</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{
+                'default_customer_id': active_id
+            }
+            </field>
+            <field name="domain">[('customer_id', '=', active_id)]</field>
+        </record>
+
+        <record id="view_rdm_customer_form_inherit_rdm_trans" model="ir.ui.view">
+            <field name="name">rdm.customer.form.inherit.rdm.trans</field>
+            <field name="model">rdm.customer</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="jakc_redemption_customer.view_rdm_customer_form"/>					
+            <field name="arch" type="xml">
+                <button name="toggle_active" position="before">
+                    <button class="oe_stat_button"
+                            string="Redeems"
+                            type="action"
+                            name="%(act_customer_trans)d"
+                            icon="fa-book">
+                    </button>
+                </button>
+                <field name="contact_type" position="before">
+                    <field name="total_amount"/>
+                </field>
+                <!--
+                <notebook position="inside">    
+                    <page string="Transaction">
+                        <field name="trans_ids" widget="one2many_list" nolabel="1">
+                            <tree>                                                               
+                                <field name="trans_date"/>                                
+                                <field name="total_amount"/>                                                                        
+                                <field name="total_item"/>                                                                        
+                            </tree>                    
+                        </field>
+                    </page>
+                </notebook>			
+                -->
+            </field>
+        </record>
+    </data>
+</odoo>

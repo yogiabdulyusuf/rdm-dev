@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="view_rdm_mobile_promot_tree">
+            <field name="name">rdm.mobile.promo.tree</field>
+            <field name="model">rdm.mobile.promo</field>						
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Promo">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>         
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- RDM/MOBILE EVENT -->		
+        <record model="ir.ui.view" id="view_rdm_mobile_promo_form">
+            <field name="name">rdm.mobile.promo.form</field>
+            <field name="model">rdm.mobile.promo</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Promo" >
+                	<sheet>
+	                    <group>                         
+                            <group>   
+	                            <field name="name"/>
+                                <field name="description"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>             
+                            </group>  
+                            <group>
+                                <field name="image_file"  widget="binary"  filename="image_filename"/>
+                                <field name="image_filename" invisible="1"/>
+                            </group>            
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record id="rdm_mobile_promo_action" model="ir.actions.act_window">
+            <field name="name">Promo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rdm.mobile.promo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+
+        <!-- <menuitem id="rdm_mobile_promo_menu" name="Promos" parent="rdm_mobile_menu" action="rdm_mobile_promo_action" sequence="3"/> -->
+    
+    
+    
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rdm_mobile_banner_manager,rdm.mobile.banner.manager,model_rdm_mobile_banner,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_mobile_banner_operator,rdm.mobile.banner.operator,model_rdm_mobile_banner,jakc_redemption.group_rdm_operator,1,1,1,0
+access_rdm_mobile_banner_api,rdm.mobile.banner.api,model_rdm_mobile_banner,base.group_user,1,0,0,0
+
+
+access_rdm_mobile_event_manager,rdm.mobile.event.manager,model_rdm_mobile_event,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_mobile_event_operator,rdm.mobile.event.operator,model_rdm_mobile_event,jakc_redemption.group_rdm_operator,1,1,1,0
+access_rdm_mobile_event_api,rdm.mobile.event.api,model_rdm_mobile_event,base.group_user,1,0,0,0
+
+access_rdm_mobile_promo_manager,rdm.mobile.promo.manager,model_rdm_mobile_promo,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_mobile_promo_operator,rdm.mobile.promo.operator,model_rdm_mobile_promo,jakc_redemption.group_rdm_operator,1,1,1,0
+access_rdm_mobile_promo_api,rdm.mobile.promo.api,model_rdm_mobile_promo,base.group_user,1,0,0,0
+

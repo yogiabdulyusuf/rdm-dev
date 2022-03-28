@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rdm_building_floor_manager,rdm.building.floor.manager,model_rdm_building_floor,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_building_floor_officer,rdm.building.floor.officer,model_rdm_building_floor,jakc_redemption.group_rdm_officer,1,1,1,0
+access_rdm_building_floor_tenant_mgmt,rdm.building.floor.tenent.mgmt,model_rdm_building_floor,jakc_redemption.group_rdm_tenant_mgmt,1,0,0,0
+access_rdm_building_floor_operator,rdm.building.floor.operator,model_rdm_building_floor,jakc_redemption.group_rdm_operator,1,0,0,0
+
+access_rdm_building_floor_manager,rdm.building.floor.manager,model_rdm_building_floor,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_building_floor_officer,rdm.building.floor.officer,model_rdm_building_floor,jakc_redemption.group_rdm_officer,1,1,1,0
+access_rdm_building_floor_tenant_mgmt,rdm.building.floor.tenent.mgmt,model_rdm_building_floor,jakc_redemption.group_rdm_tenant_mgmt,1,0,0,0
+access_rdm_building_floor_operator,rdm.building.floor.operator,model_rdm_building_floor,jakc_redemption.group_rdm_operator,1,0,0,0

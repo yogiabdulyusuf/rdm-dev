@@ -1,0 +1,239 @@
+<odoo>
+    <data>
+        
+        <!-- RDM/RULES -->		
+        <record model="ir.ui.view" id="view_rdm_rules_form">
+            <field name="name">rdm.rules.form</field>
+            <field name="model">rdm.rules</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Rules">
+                	<sheet>
+	                    <group colspan="4">                            
+	                        <field name="name"/>                            
+	                        <field name="apply_for"/>               
+	                        <field name="reward_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('apply_for','!=','3')],'required':[('apply_for','==','3')]}" />             	                                            
+	                        <field name="operation"/>
+	                        <field name="quantity"/>
+	                    </group>
+	                    <notebook colspan="4">
+	                    	<page string="Detail">
+	                    		<field name="rules_detail_ids">
+	                    			<tree string="Schemas">
+	                    				<field name="rule_schema"/>
+	                    				<field name="operation"/>	                    				
+	                    			</tree>
+	                    		</field>
+	                    	</page>	                                   	                       
+	                    </notebook>                		                		
+                	</sheet>
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_rules_tree">
+            <field name="name">rdm.rules.tree</field>
+            <field name="model">rdm.rules</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Rules">
+                    <field name="name"/>                            
+                    <field name="apply_for"/>                                                                 
+                    <field name="operation"/>                            
+                    <field name="quantity"/>                             
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_rdm_rules_detail_form">
+            <field name="name">rdm.rules.detail.form</field>
+            <field name="model">rdm.rules.detail</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Rules Detail" version="7.0"> 
+                	<sheet>	                   
+                		<group>
+                			<field name="rule_schema"/>
+                			<field name="operation"/>
+                		</group>
+	                    <notebook colspan="4">
+	                        <page string="Day" attrs="{'invisible':[('rule_schema','!=','day')]}">
+	                            <field name="day"/>                        
+	                        </page>                        
+	                        <page string="Day Name" attrs="{'invisible':[('rule_schema','!=','dayname')]}">
+	                            <field name="day_name"/>                        
+	                        </page>
+							<page string="Ethnic" attrs="{'invisible':[('rule_schema','!=','ethnic')]}">
+	                            <field name="ethnic_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Ethnic">
+	                        			<field name="ethnic_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page> 	                        
+	                        <page string="Religion" attrs="{'invisible':[('rule_schema','!=','religion')]}">
+								<field name="religion_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Religion">
+	                        			<field name="religion_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page>
+							<page string="Marital" attrs="{'invisible':[('rule_schema','!=','marital')]}">
+	                            <field name="marital_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Marital">
+	                        			<field name="marital_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page>
+	                        <page string="Zone" attrs="{'invisible':[('rule_schema','!=','zone')]}">
+	                            <field name="zone_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Zone">
+	                        			<field name="zone_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page>                                               
+	                        <page string="Education" attrs="{'invisible':[('rule_schema','!=','education')]}">
+	                            <field name="education_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Education">
+	                        			<field name="education_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page>                                               
+	                        <page string="Interest" attrs="{'invisible':[('rule_schema','!=','interest')]}">
+	                            <field name="interest_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Interest">
+	                        			<field name="interest_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page>                                               
+	                        <page string="Occupation" attrs="{'invisible':[('rule_schema','!=','occupation')]}">
+	                            <field name="occupation_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Occupation">
+	                        			<field name="occupation_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page>     	                             	                                        	                                                                  	                                              	                                             	                      
+	                        <page string="Card Type" attrs="{'invisible':[('rule_schema','!=','cardtype')]}">
+	                            <field name="card_type_ids" widget="one2many_list" nolabel="1" >
+	                        		<tree string="Card Type">
+	                        			<field name="card_type_id"/>
+	                        		</tree>
+	                            </field>
+	                        </page>                                               
+	                        <page string="Tenant" attrs="{'invisible':[('rule_schema','!=','tenant')]}">
+	                            <field name="tenant_ids" widget="one2many_list" nolabel="1" >
+	                            	<tree>
+	                            		<field name="tenant_id"/>
+	                            	</tree>
+	                            </field>	                            
+	                        </page>                                               
+	                        <page string="Tenant Category" attrs="{'invisible':[('rule_schema','!=','tenanttype')]}">
+	                            <field name="tenant_category_ids" widget="one2many_list" nolabel="1" >
+	                            	<tree>
+	                            		<field name="tenant_category_id"/>
+	                            	</tree>
+	                            </field>
+	                        </page>                                               
+	                        <page string="Bank" attrs="{'invisible':[('rule_schema','!=','bank')]}">
+	                            <field name="bank_ids" widget="one2many_list" nolabel="1" />
+	                        </page>                                               
+	                        <page string="Bank Card" attrs="{'invisible':[('rule_schema','!=','bankcard')]}">
+	                            <field name="bank_card_ids" widget="one2many_list" nolabel="1" />
+	                        </page>                                               
+	                        <page string="Customer Age" attrs="{'invisible':[('rule_schema','!=','age')]}">
+	                            <field name="age_ids" widget="one2many_list" nolabel="1" >
+									<tree>
+										<field name="operator"/>
+										<field name="value1"/>
+										<field name="value2"/>																				
+									</tree>	                            	
+								</field>                        
+	                        </page>
+	                        <page string="Spending Amount" attrs="{'invisible':[('rule_schema','!=','spending')]}">
+	                            <field name="spending_amount_ids" widget="one2many_list" nolabel="1" >
+									<tree>
+										<field name="operator"/>
+										<field name="value1"/>
+										<field name="value2"/>																				
+									</tree>	                            	
+								</field>                        
+	                        </page>                                               	                                                                      
+	                        <page string="Gender" attrs="{'invisible':[('rule_schema','!=','gender')]}">
+	                            <field name="gender_ids" widget="one2many_list" nolabel="1" />
+	                        </page> 	                 
+	                        <page string="Participant" attrs="{'invisible':[('rule_schema','!=','participant')]}">
+	                            <field name="participant_ids" widget="one2many_list" nolabel="1" />
+	                        </page> 	                 
+	                       	<page string="Cash Transaction" attrs="{'invisible':[('rule_schema','!=','cash')]}">
+	                            <field name="cash_ids" widget="one2many_list" nolabel="1" >
+	                            	<tree string="Cash">
+	                            		<field name="bank_id"/>
+	                            	</tree>
+	                            </field>
+	                        </page> 	                 	                               	           
+	                    </notebook>                		                		
+                	</sheet>
+                </form>
+            </field>
+        </record>
+		
+		<!-- RDM/RULES PARTICIPANT -->		
+        <record model="ir.ui.view" id="view_rdm_rules_participant_form">
+            <field name="name">rdm.rules.participant.form</field>
+            <field name="model">rdm.rules.participant</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Rules"  version="7.0"> 
+                	<sheet>
+	                    <group colspan="4">       	                    	                   
+	                        <field name="participant_id"/>                            
+	                    </group>	                              		                	
+                	</sheet>
+                </form>
+            </field>
+        </record>		
+        
+		<!-- RDM/RULES CUSTOMER AGE -->		
+        <record model="ir.ui.view" id="view_rdm_rules_customer_age_form">
+            <field name="name">rdm.rules.customer.age.form</field>
+            <field name="model">rdm.rules.customer.age</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Rules"  version="7.0"> 
+                	<sheet>
+	                    <group colspan="4">       	                    	                   
+	                        <field name="operator"/>                            
+	                        <field name="value1"/>                            
+	                        <field name="value2" attrs="{'invisible':[('operator','!=','bw')]}"/>                            
+	                    </group>	                              		                	
+                	</sheet>
+                </form>
+            </field>
+        </record>
+        
+		<!-- RDM/RULES SPENDING AMOUNT -->		
+        <record model="ir.ui.view" id="view_rdm_rules_spending_amount_form">
+            <field name="name">rdm.rules.spending.amount.form</field>
+            <field name="model">rdm.rules.spending.amount</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Rules" version="7.0"> 
+                	<sheet>
+	                    <group colspan="4">       	                    	                   
+	                        <field name="operator"/>                            
+	                        <field name="value1"/>                            
+	                        <field name="value2" attrs="{'invisible':[('operator','!=','bw')]}"/>                            
+	                    </group>	                              		                	
+                	</sheet>
+                </form>
+            </field>
+        </record>        
+                
+        <!-- RDM/ACTION -->
+        <!-- RULES -->
+	<record model="ir.actions.act_window" id="action_rdm_rules">
+            <field name="name">Rules</field>
+            <field name="res_model">rdm.rules</field>
+            <field name="view_mode">tree,form</field>
+        </record>		        
+    </data>        
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<!-- Inherit Form View to Modify it -->
+        <record id="res_company_settings" model="ir.ui.view">
+           <field name="name">Res Company Settings</field>
+           <field name="model">res.company</field>
+           <field name="inherit_id" ref="base.view_company_form"/>
+           <field name="arch" type="xml">
+
+               <xpath expr="//notebook" position="inside">
+                   <!-- Add your fields or attributes here -->
+                   <page string="Redemption Settings">
+                        <separator string="General Configuration"/>
+	     				<group name="Redemption">
+	     					<group>
+	     					    <field name="rdm_server"/>
+	     					</group>
+	     				</group>
+                        <separator string="Email Configuration"/>
+	     				<group name="Redemption">
+	     					<group>
+	     						<field name="enable_email"/>
+	     						<field name="email_from"/>
+	     						<field name="pop3_download"/>
+	     						<field name="pop3_server" attrs="{'invisible':[('pop3_download','=',False)]}"/>
+	     						<field name="pop3_user" attrs="{'invisible':[('pop3_download','=',False)]}"/>
+	     						<field name="pop3_password" attrs="{'invisible':[('pop3_download','=',False)]}"/>
+	     					</group>
+	     				</group>
+	     				<separator string="Report Configuration"/>
+	     				<group name="Redemption">
+	     					<group>
+	     						<field name="report_server"/>
+	     						<field name="report_server_port"/>
+	     						<field name="report_user"/>
+	     						<field name="report_password"/>
+	     					</group>
+	     				</group>       
+	  					<separator string="Transaction Configuration"/>
+	     				<group name="Redemption">
+	     					<group>
+	     						<field name="trans_delete_allowed"/>
+	     						<field name="trans_delete_approver"/>
+	     					</group>
+	     				</group>    
+
+                    </page>
+
+				   <page string="AYC Image">
+                        <group>
+                            <group string="AYC Image">
+                                <field name="ayc_image_horizontal" widget="image" options='{"size": [200, ]}'/>
+                                <field name="ayc_image_vertical" widget="image" options='{"size": [200, ]}'/>
+
+                            </group>
+                        </group>
+                    </page>
+
+               </xpath>
+
+           </field>
+        </record>
+
+	</data>
+
+</odoo>

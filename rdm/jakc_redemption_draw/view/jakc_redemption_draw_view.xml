@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<openerp>
+    <data>
+    
+        <!-- RDM/DRAW -->
+		
+        <record model="ir.ui.view" id="view_rdm_draw_form">
+            <field name="name">rdm.draw.form</field>
+            <field name="model">rdm.draw</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Draw">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>
+	                        <field name="quantity"/>
+	                        <field name="sequence"/>                            
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_draw_tree">
+            <field name="name">rdm.draw.tree</field>
+            <field name="model">rdm.draw</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Draw">
+                    <field name="schemas_id"/>
+                    <field name="name"/>
+	                <field name="quantity"/>
+	                <field name="sequence"/> 
+                    
+                </tree>
+            </field>
+        </record>
+        
+        
+        
+        <!-- RDM/DRAW DETAIL-->
+		
+        <record model="ir.ui.view" id="view_rdm_draw_detil_form">
+            <field name="name">rdm.draw.detail.form</field>
+            <field name="model">rdm.draw.detail</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Draw">
+                    <header>
+                        <button name="trans_confirm" string="Confirm" type="object" class="oe_highlight" states='draft,open' confirm="Are you sure to confirm this transaction?"/>
+                        <button name="trans_show_display" string="Show Display" type="object" class="oe_highlight" states='done' confirm="Are you sure to show this transaction?"/>
+                        <button name="trans_close_display" string="Close Display" type="object" class="oe_highlight" states='done'/>
+                        <button name="trans_re_open_01" string="Re-open without Coupon RB" type="object" class="oe_highlight" states='done' confirm="Are you sure to re open this transaction?"/>
+                        <button name="trans_re_open_02" string="Re-open with Coupon RB" type="object" states='done' confirm="Are you sure to re open this transaction?"/>
+                                                                                                                     
+                    </header>
+                	<sheet>
+	                    <group>                            
+	                        <field name="draw_id"/>
+	                        <field name="schemas_id"/>                    		
+	                        <field name="coupon_id"/>
+                    		<field name="customer_id"/>
+                   	 		<field name="sequence"/>
+                    		<field name="iface_show"/>		
+                    		<field name="state"/>                         
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="view_rdm_draw_detail_tree">
+            <field name="name">rdm.draw.detail.tree</field>
+            <field name="model">rdm.draw.detail</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Draw">
+                    <field name="draw_id"/>
+                    <field name="schemas_id"/>
+                    <field name="coupon_id"/>
+	                <field name="customer_id"/>
+	                <field name="iface_show"/>
+	                <field name="state"/>	                                    
+                </tree>
+            </field>
+        </record>
+        
+                   
+        <!-- RDM/ACTION -->
+        <!-- DRAW -->
+		<record model="ir.actions.act_window" id="action_rdm_draw">
+            <field name="name">Draw</field>
+            <field name="res_model">rdm.draw</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+         <!-- DRAW DETAIL -->
+		<record model="ir.actions.act_window" id="action_rdm_draw_detail">
+            <field name="name">Draw Detail</field>
+            <field name="res_model">rdm.draw.detail</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+                                                                                                                                                                                                                                                                                        	
+    </data>                
+</openerp>

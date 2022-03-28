@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	    <record id="view_customer_config_settings" model="ir.ui.view">
+	        <field name="name">Customer Config Settings</field>
+	        <field name="model">res.company</field>
+           	<field name="inherit_id" ref="base.view_company_form"/>
+	        <field name="arch" type="xml">
+
+				<xpath expr="//notebook" position="inside">
+                   <!-- Add your fields or attributes here -->
+                   <page string="Reward Settings">
+
+                        <separator string="Reward Configuration"/>
+	     				<group name="Reward">
+	     					<group>
+	     						<field name="reward_limit"/>
+	     						<field name="reward_limit_product"/>
+	     						<field name="reward_limit_count"/>
+	     						<field name="reward_booking_expired_day"/>
+	     						<field name="reward_trans_email_tmpl"/>	  
+	     						<field name="reward_booking_email_tmpl"/>	     						
+	     					</group>
+	     				</group>
+	     			</page>
+
+               </xpath>
+	        </field>
+	    </record>
+
+	</data>
+</odoo>

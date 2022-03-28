@@ -1,0 +1,10 @@
+<odoo>
+    <data>        
+        <menuitem id="rdm_promo_menu" 
+                  name="Promo Schemas" 
+                  parent="jakc_redemption.rdm_promo_menu" 
+                  action="action_rdm_promo_schemas" 
+                  groups="jakc_redemption.group_rdm_manager,jakc_redemption.group_rdm_officer,jakc_redemption.group_rdm_operator"
+                  sequence="2"/>
+    </data>
+</odoo>

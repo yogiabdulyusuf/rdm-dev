@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <!-- RDM/PROVINCE -->		
+        <record model="ir.ui.view" id="view_rdm_province_form">
+            <field name="name">rdm.province.form</field>
+            <field name="model">rdm.province</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Province" >
+                	<sheet>
+	                    <group>                         
+                            <group>   
+	                            <field name="name"/>              
+                            </group>              
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_province_tree">
+            <field name="name">rdm.province.tree</field>
+            <field name="model">rdm.province</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Province">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/CITY -->
+		
+        <record model="ir.ui.view" id="view_rdm_city_form">
+            <field name="name">rdm.city.form</field>
+            <field name="model">rdm.city</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="City" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_city_tree">
+            <field name="name">rdm.city.tree</field>
+            <field name="model">rdm.city</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="City">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+                    
+        <!-- RDM/CUSTOMER TYPE -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_type_form">
+            <field name="name">rdm.customer.type.form</field>
+            <field name="model">rdm.customer.type</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Type" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>	                		                	
+                	</sheet>  
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_type_tree">
+            <field name="name">rdm.customer.type.tree</field>
+            <field name="model">rdm.customer.type</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Type">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+
+        <!-- RDM/CUSTOMER ETHNIC -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_ethnic_form">
+            <field name="name">rdm.customer.ethnic.form</field>
+            <field name="model">rdm.customer.ethnic</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Ethnic" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_ethnic_tree">
+            <field name="name">rdm.customer.ethnic.tree</field>
+            <field name="model">rdm.customer.ethnic</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Ethnic">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/CUSTOMER RELIGION -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_religion_form">
+            <field name="name">rdm.customer.religion.form</field>
+            <field name="model">rdm.customer.religion</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Religion" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_religion_tree">
+            <field name="name">rdm.customer.religion.tree</field>
+            <field name="model">rdm.customer.religion</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Religion">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+
+        <!-- RDM/CUSTOMER GENDER -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_gender_form">
+            <field name="name">rdm.customer.gender.form</field>
+            <field name="model">rdm.customer.gender</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Gender" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_gender_tree">
+            <field name="name">rdm.customer.gender.tree</field>
+            <field name="model">rdm.customer.gender</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Gender">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record> 
+        
+        <!-- RDM/CUSTOMER MARITAL -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_marital_form">
+            <field name="name">rdm.customer.marital.form</field>
+            <field name="model">rdm.customer.marital</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Marital" >
+                	<sheet>                
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_marital_tree">
+            <field name="name">rdm.customer.marital.tree</field>
+            <field name="model">rdm.customer.marital</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Marital">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record> 
+                                
+        <!-- RDM/CUSTOMER ZONE -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_zone_form">
+            <field name="name">rdm.customer.zone.form</field>
+            <field name="model">rdm.customer.zone</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Zone" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_zone_tree">
+            <field name="name">rdm.customer.zone.tree</field>
+            <field name="model">rdm.customer.zone</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Zone">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/CUSTOMER EDUCATION -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_education_form">
+            <field name="name">rdm.customer.education.form</field>
+            <field name="model">rdm.customer.education</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Education" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_education_tree">
+            <field name="name">rdm.customer.education.tree</field>
+            <field name="model">rdm.customer.education</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Education">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/CUSTOMER INTEREST -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_interest_form">
+            <field name="name">rdm.customer.interest.form</field>
+            <field name="model">rdm.customer.interest</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Interest" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_interest_tree">
+            <field name="name">rdm.customer.interest.tree</field>
+            <field name="model">rdm.customer.interest</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Interest">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+
+         
+         
+        <!-- RDM/CUSTOMER OCCUPATION -->
+		
+        <record model="ir.ui.view" id="view_rdm_customer_occupation_form">
+            <field name="name">rdm.customer.occupation.form</field>
+            <field name="model">rdm.customer.occupation</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Customer Occupation" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_customer_occupation_tree">
+            <field name="name">rdm.customer.occupation.tree</field>
+            <field name="model">rdm.customer.occupation</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Customer Occupation">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+          
+                    
+        <!-- RDM/CARD TYPE -->
+		
+        <record model="ir.ui.view" id="view_rdm_card_type_form">
+            <field name="name">rdm.card.type.form</field>
+            <field name="model">rdm.card.type</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Card Type" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                		
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_card_type_tree">
+            <field name="name">rdm.card.type.tree</field>
+            <field name="model">rdm.card.type</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Card Type">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/TENANT TYPE -->
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_category_form">
+            <field name="name">rdm.tenant.category.form</field>
+            <field name="model">rdm.tenant.category</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Tenant Category" >  
+					<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>						
+					</sheet>                	
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_category_tree">
+            <field name="name">rdm.tenant.category.tree</field>
+            <field name="model">rdm.tenant.category</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Tenant Category">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/TENANT GRADE -->
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_grade_form">
+            <field name="name">rdm.tenant.grade.form</field>
+            <field name="model">rdm.tenant.grade</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Tenant Grade" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_grade_tree">
+            <field name="name">rdm.tenant.grade.tree</field>
+            <field name="model">rdm.tenant.grade</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Tenant Grade">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/BANK -->
+		
+        <record model="ir.ui.view" id="view_rdm_bank_form">
+            <field name="name">rdm.bank.form</field>
+            <field name="model">rdm.bank</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Bank" >
+                	<sheet>
+	                    <group colspan="4">                            
+	                        <field name="name"/>	                                                   
+	                    </group>	            
+	                    <notebook>
+	                    	<page string="Bank Card">
+	                    		<group>
+	                    			<field name="bank_card_ids">
+	                    				<tree>
+	                    					<field name="name"/>
+	                    					<field name="card_type"/>
+	                    				</tree>
+	                    			</field>
+	                    		</group>
+	                    	</page>	
+	                    </notebook>               		          
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_grade_tree">
+            <field name="name">rdm.tenant.grade.tree</field>
+            <field name="model">rdm.tenant.grade</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Tenant Grade">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        
+        <!-- RDM/BANK CARD -->
+		
+        <record model="ir.ui.view" id="view_rdm_bank_card_form">
+            <field name="name">rdm.bank.card.form</field>
+            <field name="model">rdm.bank.card</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Bank Card" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>
+	                        <field name="card_type"/>	                                                   
+	                    </group>                		                	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+        
+        
+        <!-- RDM/BANK CARD TYPE-->
+		
+        <record model="ir.ui.view" id="view_rdm_bank_card_type_form">
+            <field name="name">rdm.bank.card.type.form</field>
+            <field name="model">rdm.bank.card.type</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Bank Card Type" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_bank_card_type_tree">
+            <field name="name">rdm.bank.card.type.tree</field>
+            <field name="model">rdm.bank.card.type</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Bank Card Type">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+        
+        <!-- RDM/TENANT TITLE -->
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_title_form">
+            <field name="name">rdm.tenant.title.form</field>
+            <field name="model">rdm.tenant.title</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Tenant Title" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                    </group>                		
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_title_tree">
+            <field name="name">rdm.tenant.title.tree</field>
+            <field name="model">rdm.tenant.title</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Tenant Title">
+                    <field name="name"/>		
+                </tree>
+            </field>
+        </record>
+
+     
+        
+
+		<!-- RDM/AGE SEGMENT -->
+		
+        <record model="ir.ui.view" id="view_rdm_age_segment_form">
+            <field name="name">rdm.age.segment.form</field>
+            <field name="model">rdm.age.segment</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Age Segment" >
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                        <field name="start_age"/>                            
+	                        <field name="end_age"/>                            
+	                    </group>                		
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_age_segment_tree">
+            <field name="name">rdm.age.segment.tree</field>
+            <field name="model">rdm.age.segment</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Age Segment">
+                    <field name="name"/>
+                    <field name="start_age"/>                            
+                    <field name="end_age"/>                            		
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- RDM/BUILDING FLOOR -->
+        <record model="ir.ui.view" id="view_rdm_building_floor_form">
+            <field name="name">rdm.building.floor.form</field>
+            <field name="model">rdm.building.floor</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Floor">
+                	<sheet>
+	                    <group>                            
+	                        <field name="name"/>                            
+	                        <field name="sequence"/>
+                            <field name="image" widget="image" options='{"size": [200, ]}'/>
+	                    </group>                		
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_building_floor_tree">
+            <field name="name">rdm.building.floor.tree</field>
+            <field name="model">rdm.building.floor</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Floor">
+                    <field name="name"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+                                                
+        <!-- RDM/ACTION -->
+        <!-- CUSTOMER TYPE -->
+	<record model="ir.actions.act_window" id="action_rdm_customer_type">
+            <field name="name">Customer Type</field>
+            <field name="res_model">rdm.customer.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- CUSTOMER ETHNIC -->
+	<record model="ir.actions.act_window" id="action_rdm_customer_ethnic">
+            <field name="name">Customer Ethnic</field>
+            <field name="res_model">rdm.customer.ethnic</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- CUSTOMER RELIGION -->
+	<record model="ir.actions.act_window" id="action_rdm_customer_religion">
+            <field name="name">Customer Religion</field>
+            <field name="res_model">rdm.customer.religion</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- CUSTOMER GENDER -->
+	<record model="ir.actions.act_window" id="action_rdm_customer_gender">
+            <field name="name">Customer Gender</field>
+            <field name="res_model">rdm.customer.gender</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- CUSTOMER ZONE -->
+	<record model="ir.actions.act_window" id="action_rdm_customer_marital">
+            <field name="name">Customer Marital</field>
+            <field name="res_model">rdm.customer.marital</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        
+        <!-- CUSTOMER ZONE -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_zone">
+            <field name="name">Customer Zone</field>
+            <field name="res_model">rdm.customer.zone</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- CUSTOMER EDUCATION -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_education">
+            <field name="name">Customer Education</field>
+            <field name="res_model">rdm.customer.education</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- CUSTOMER INTEREST -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_interest">
+            <field name="name">Customer Interest</field>
+            <field name="res_model">rdm.customer.interest</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+        <!-- CUSTOMER INTEREST -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_gender">
+            <field name="name">Customer Gender</field>
+            <field name="res_model">rdm.customer.gender</field>
+            <field name="view_mode">tree,form</field>
+        </record>		        
+        <!-- CUSTOMER ZONE -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_zone">
+            <field name="name">Customer Zone</field>
+            <field name="res_model">rdm.customer.zone</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- CUSTOMER OCCUPATION -->
+		<record model="ir.actions.act_window" id="action_rdm_customer_occupation">
+            <field name="name">Customer Occupation</field>
+            <field name="res_model">rdm.customer.occupation</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+                
+        <!-- CARD TYPE -->
+		<record model="ir.actions.act_window" id="action_rdm_card_type">
+            <field name="name">Card Type</field>
+            <field name="res_model">rdm.card.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- TENANT TYPE -->
+		<record model="ir.actions.act_window" id="action_rdm_tenant_category">
+            <field name="name">Tenant Type</field>
+            <field name="res_model">rdm.tenant.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- TENANT TYPE -->
+		<record model="ir.actions.act_window" id="action_rdm_tenant_grade">
+            <field name="name">Tenant Grade</field>
+            <field name="res_model">rdm.tenant.grade</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- BANK -->
+		<record model="ir.actions.act_window" id="action_rdm_bank">
+            <field name="name">Bank</field>
+            <field name="res_model">rdm.bank</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- BANK CARD TYPE-->
+		<record model="ir.actions.act_window" id="action_rdm_bank_card_type">
+            <field name="name">Bank Card Type</field>
+            <field name="res_model">rdm.bank.card.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- TENANT TITLE -->
+		<record model="ir.actions.act_window" id="action_rdm_tenant_title">
+            <field name="name">Tenant Title</field>
+            <field name="res_model">rdm.tenant.title</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- PROVINCE -->
+		<record model="ir.actions.act_window" id="action_rdm_province">
+            <field name="name">Province</field>
+            <field name="res_model">rdm.province</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+        <!-- CITY -->
+		<record model="ir.actions.act_window" id="action_rdm_city">
+            <field name="name">City</field>
+            <field name="res_model">rdm.city</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+
+        
+        <!-- AGE SEGMENT -->
+		<record model="ir.actions.act_window" id="action_rdm_age_segment">
+            <field name="name">Age Segment</field>
+            <field name="res_model">rdm.age.segment</field>
+            <field name="view_mode">tree,form</field>
+        </record>	
+
+        <!-- Building Floor -->
+		<record model="ir.actions.act_window" id="action_rdm_building_floor">
+            <field name="name">Floor</field>
+            <field name="res_model">rdm.building.floor</field>
+            <field name="view_mode">tree,form</field>
+        </record>		
+                                                                                                                                                                                                                                                                                        	
+    </data>                
+</odoo>

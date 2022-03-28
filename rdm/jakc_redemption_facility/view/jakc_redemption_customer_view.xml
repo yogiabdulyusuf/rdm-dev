@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_rdm_tenant_form_inherit_rdm_customer" model="ir.ui.view">
+            <field name="name">rdm.tenant.form.inherit.rdm.customer</field>
+            <field name="model">rdm.customer</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="jakc_redemption_customer.view_rdm_customer_form"/>					
+            <field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="tenant_id" attrs="{'invisible':[('contact_type','=','customer')]}"/>
+				</field>            				
+            </field>
+        </record>
+    </data>
+</odoo>

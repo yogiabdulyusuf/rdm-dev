@@ -1,0 +1,272 @@
+<odoo>
+    <data>                          
+        <!-- RDM/REWARD -->		
+        <record model="ir.ui.view" id="view_rdm_reward_form">
+            <field name="name">rdm.reward.form</field>
+            <field name="model">rdm.reward</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Reward">
+					<header>
+                        <button name="trans_close" string="Close" type="object" class="oe_highlight" states="draft" confirm="Are you sure to close this transaction?"/>
+                        <button name="trans_re_open" string="Re-open" type="object" class="oe_highlight" states="done"/>                                                                      
+					</header>                      
+                	<sheet>
+						<group colspan="2">
+							<group>
+			                	<field name="name"/>
+			                	<field name="type"/>                            
+			                    <field name="point"/>
+                                <field name="coupon_number" attrs="{'invisible':[('type','!=','coupon')],'required':[('type','==','coupon')]}"/>
+			                    <field name="limit_count"/>             
+			                    <field name="stock"/>
+			                    <field name="booking"/>
+			                    <field name="usage"/>
+			                    <field name="info"/>
+			                    <field name="state"/>
+							</group>                    
+							<group>
+								<field name="image1" widget="image" options='{"size": [200, ]}'/>
+							</group>													
+						</group>    					
+						<notebook colspan="4">
+							<page string="Goods" attrs="{'invisible':[('type','!=','goods')]}">
+								<field name="goods_ids" widget="one2many_list" nolabel="1">
+                            		<tree>                                                                                                
+                                		<field name="trans_date"/>
+                                		<field name="stock"/>                                		                                      
+                            		</tree>                    
+                        		</field>
+							</page>
+							<page string="Coupon" attrs="{'invisible':[('type','!=','coupon')]}">
+                        		<field name="coupon_ids" widget="one2many_list" nolabel="1">
+                            		<tree>                                                                                                
+                                		<field name="trans_date"/>
+                                		<field name="stock"/>                                		                       		                                     
+                            		</tree>                    
+                        		</field>							
+							</page>
+							<page string="Voucher" attrs="{'invisible':[('type','!=','voucher')]}">
+                        		<field name="voucher_ids" widget="one2many_list" nolabel="1">
+                            		<tree>                                                                                                
+                                		<field name="trans_date"/>
+                                		<field name="stock"/>
+                                		<!--<field name="voucher_no"/>-->
+                                		<field name="state"/>                                		                       		                                     
+                            		</tree>                    
+                        		</field>							
+							</page>
+							<page string="Transaction">
+								<field name="reward_trans_ids" widget="one2many)list" nolabel="1" readonly="1">
+									<tree>
+										<field name="trans_date"/>
+										<field name="customer_id"/>
+										<field name="is_booking"/>
+										<field name="point"/>
+										<field name="state"/>																				
+									</tree>
+								</field>
+							</page>
+						</notebook>	
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_reward_tree">
+            <field name="name">rdm.reward.tree</field>
+            <field name="model">rdm.reward</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Reward">
+                    <field name="name"/>
+                    <field name="point"/>                                                                     	
+                    <field name="state"/>                                         
+                </tree>
+            </field>
+        </record>        
+        
+        <record model="ir.ui.view" id="view_rdm_reward_kanban">
+            <field name="name">rdm.reward.kanban</field>
+            <field name="model">rdm.reward</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_resource_vignette">
+                                <div class="oe_resource_image">
+                                    <a type="open"><img width="200" class="oe_kanban_image" t-att-src="kanban_image('rdm.reward', 'image1', record.id.raw_value)"/></a>
+                                </div>
+                                <div class="oe_resource_details">
+                                    <ul>
+                                        <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                       <li><field name="name"/></li>
+                                       <li>Point : <field name="point"/></li>                                                                                                             
+                                       <li>Status : <field name="state"/></li>                                   
+                                     </ul>
+                                </div>
+                            </div>                       
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_rdm_reward_goods_form">
+            <field name="name">rdm.reward.goods.form</field>
+            <field name="model">rdm.reward.goods</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Goods">
+                	<sheet>
+						<group colspan="2">							
+			            	<field name="trans_date"/>
+			                <field name="stock"/>                            
+						</group>    					
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_rdm_reward_coupon_form">
+            <field name="name">rdm.reward.coupon.form</field>
+            <field name="model">rdm.reward.coupon</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Coupon">
+                	<sheet>
+						<group colspan="2">							
+			            	<field name="trans_date"/>
+			                <field name="stock"/>                            
+						</group>    					
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+        
+		<record model="ir.ui.view" id="view_rdm_reward_voucher_form">
+            <field name="name">rdm.reward.voucher.form</field>
+            <field name="model">rdm.reward.voucher</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Voucher">
+                	<sheet>
+						<group colspan="2">							
+			            	<field name="trans_date"/>
+			                <field name="stock"/>
+			                <!--<field name="voucher_no"/>                          -->
+						</group>
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+
+        <!-- RDM/REWARD TRANS -->		
+        <record model="ir.ui.view" id="view_rdm_reward_trans_form">
+            <field name="name">rdm.reward.trans.form</field>
+            <field name="model">rdm.reward.trans</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Reward Transaction">
+					<header>
+                        <button name="trans_close" string="Close" type="object" class="oe_highlight" states="open" confirm="Are you sure to close this transaction?"/>
+					    <button name="trans_print" string="Print" type="object" class="oe_highlight" states="done" confirm="Are you sure to print this transaction?"/>
+                        <field name="state" widget="statusbar"/>	       
+                    </header>
+                	<sheet>
+	                    <group>
+							<group string="General Information">
+		                    	<field name="trans_date"/>                           
+			                    <field name="customer_id"  options="{'no_create': True, 'no_create_edit':True}" />
+			                    <field name="type" />
+			                    <field name="remarks"/>
+			                    <field name="is_booking" />
+			                    <field name="booking_expired" attrs="{'invisible':[('is_booking','=',False)]}"/>		                          
+			                    <field name="printed"/>																
+							</group>	                    	
+		                    <group string="Reward Information">
+		                    	<field name="reward_id" options="{'no_create': True, 'no_create_edit':True}"/>
+		                    	<field name="point"/>	
+		                    </group>             
+	                    </group>
+                        <notebook>
+                            <page string="Coupon">
+                                <field name="customer_coupon_ids">
+                                    <tree>
+                                        <field name="trans_type"/>
+	                                	<field name="coupon"/>
+	                                	<field name="expired_date"/>
+	                                	<field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                	</sheet> 
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_reward_trans_tree">
+            <field name="name">rdm.reward.trans.tree</field>
+            <field name="model">rdm.reward.trans</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Reward Transaction">
+					<field name="trans_date"/>                	
+                    <field name="customer_id"/>
+                    <field name="reward_id"/>
+                    <field name="point"/>                            		
+                    <field name="remarks"/>
+                    <field name="is_booking"/>
+                    <field name="booking_expired"/>     
+                    <field name="state"/>                       
+                </tree>
+            </field>
+        </record>        
+                        
+        <record model="ir.ui.view" id="view_rdm_reward_trans_filter">
+            <field name="name">Transaction Search</field>
+            <field name="model">rdm.reward.trans</field>
+            <field name="arch" type="xml">
+                <search string="Search Transaction">                	
+                    <field name="trans_date"/>
+ 					<field name="customer_id"/>
+                    <filter icon="terp-camera_test" string="Open" name="status_open" domain="[('state','=','open')]" help="Open Status" />                                       
+                    <filter icon="terp-camera_test" string="Close" name="status_close" domain="[('state','=','done')]" help="Close Status" />  
+                    <group expand="0" string="Group By...">                        
+                        <filter string="Status" name="status" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}" />                        
+                    </group>
+                </search>
+            </field>
+        </record>   
+        	       
+        <!-- REWARD -->
+		<record model="ir.actions.act_window" id="action_rdm_reward">
+            <field name="name">Reward</field>
+            <field name="res_model">rdm.reward</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <!-- REWARD TRANSACTION -->
+		<record model="ir.actions.act_window" id="action_rdm_reward_trans">
+            <field name="name">Reward Transaction</field>
+            <field name="res_model">rdm.reward.trans</field>
+			<field name="context">{'search_default_status_open':1}</field>            
+            <field name="view_mode">tree,form,pivot</field>
+        </record>
+
+		<record model="ir.ui.view" id="pivot_rdm_reward_trans">
+            <field name="name">rdm.reward.trans.pivot</field>
+            <field name="model">rdm.reward.trans</field>
+            <field name="arch" type="xml">
+                <pivot string="Pivot">
+                    <field name="reward_id" type="row"/>
+                    <field name="state" type="col"/>
+               </pivot>
+            </field>
+        </record>
+                		        
+    </data>
+</odoo>

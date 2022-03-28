@@ -1,0 +1,5 @@
+<openerp>
+    <data>
+        <menuitem id="rdm_customer_config" name="Customer Settings" parent="base.menu_config" sequence="16" action="action_customer_config"/>
+    </data>
+</openerp>

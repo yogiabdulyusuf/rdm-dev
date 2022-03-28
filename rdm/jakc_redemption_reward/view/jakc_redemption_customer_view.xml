@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="act_customer_rewards" model="ir.actions.act_window">
+            <field name="name">Rewards</field>
+            <field name="res_model">rdm.reward.trans</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{
+                'default_customer_id': active_id,
+            }   
+            </field>
+            <field name="domain">[('customer_id', '=', active_id)]</field>
+        </record>
+
+        <record id="view_rdm_customer_form_inherit_rdm_reward_trans" model="ir.ui.view">
+            <field name="name">rdm.customer.form_inherit.rdm.reward.trans</field>
+            <field name="model">rdm.customer</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="jakc_redemption_customer.view_rdm_customer_form"/>					
+            <field name="arch" type="xml">
+                <button name="toggle_active" position="before">
+                    <button class="oe_stat_button"
+                            string="Rewards"
+                            type="action"
+                            name="%(act_customer_rewards)d"
+                            icon="fa-book">
+                    </button>
+                </button>
+                <!--
+                <notebook position="inside">
+                    <page string="Reward">
+                        <field name="reward_trans_ids" widget="one2many_list" nolabel="1">
+                            <tree>                                                                
+                                <field name="trans_date"/>             
+                                <field name="reward_id"/>
+                                <field name="point"/>                                                                                                                   
+                                <field name="remarks"/>          
+                                <field name="state"/>          
+                                                                                              
+                            </tree>                    
+                        </field>
+                    </page>
+                </notebook>
+                -->			
+            </field>
+        </record>
+    </data>
+</odoo>

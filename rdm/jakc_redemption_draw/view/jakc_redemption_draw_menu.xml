@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>                
+    	<menuitem name="Draw" id="base.rdm_draw_menu" parent="jakc_redemption.rdm_main_menu"/>        
+        <menuitem id="rdm_draw_detail_menu" name="Draw Detail" parent="base.rdm_draw_menu" action="action_rdm_draw_detail" sequence="1"/>                 
+    </data>
+</openerp>

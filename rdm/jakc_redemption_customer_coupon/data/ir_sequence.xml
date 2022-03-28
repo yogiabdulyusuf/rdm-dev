@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="sequence_rdm_customer_coupon" model="ir.sequence">
+			<field name="name">Customer Coupon</field>
+            <field name="code">rdm.customer.coupon.sequence</field>
+			<field name="prefix">CPN%(year)s%(month)s</field>
+			<field name="padding">3</field>
+			<field name="next_number_actual">1</field>
+			<field name="number_increment">1</field>
+			<field name="implementation">standard</field>
+		</record>
+
+		<!-- UP
+
+		<record id="seq_trans_stiker" model="ir.sequence">
+			<field name="name">Trans Stiker</field>
+			<field name="code">trans.stiker</field>
+			<field name="prefix">TS%(year)s%(month)s</field>
+			<field name="padding">3</field>
+			<field name="next_number_actual">1</field>
+			<field name="number_increment">1</field>
+			<field name="implementation">standard</field>
+		</record>	
+
+-->
+	</data>
+</odoo>

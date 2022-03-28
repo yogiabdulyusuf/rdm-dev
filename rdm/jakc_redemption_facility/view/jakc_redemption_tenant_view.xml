@@ -1,0 +1,156 @@
+<odoo>
+    <data>
+        <!-- RDM/TENANT-->		
+        <record model="ir.ui.view" id="view_rdm_tenant_form">
+            <field name="name">rdm.tenant.form</field>
+            <field name="model">rdm.tenant</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Tenant">
+                    <header>
+						<button name="trans_disable" string="Disable" type="object" class="oe_highlight" states="active" /> <!-- groups="base.group_rdm_manager" -->
+						<button name="trans_enable" string="Enable" type="object" class="oe_highlight" states="disable" /> <!-- groups="base.group_rdm_manager" -->
+						<button name="trans_terminate" string="Terminate" type="object" class="oe_highlight" states="active" />		<!-- groups="base.group_rdm_manager" -->
+                        <button name="trans_reset" string="Re-Open" type="object" class="oe_highlight" states="terminate" /> <!-- groups="base.group_rdm_manager" -->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,active,disable,terminate"/>
+                   </header>                 	                	 
+					<sheet>
+	                    <group colspan="4">                            
+	                        <field name="name"/>
+	                        <field name="company"/>
+	                        <field name="category"/>
+	                        <field name="grade"/>                        
+	                        <field name="participant"/>                            
+	                        <field name="location"/>
+	                        <field name="floor"/>
+	                        <field name="number"/>
+	                        <field name="start_date"/>
+	                        <field name="end_date"/>
+	                    </group>
+	                    <notebook colspan="4">
+	                        <page string="Contacts">
+	                            <field name="customer_ids" widget="one2many_list">
+	                                <tree string="Contacts">
+	                                    <field name="name"/>
+	                                    <field name="title"/>                                    
+	                                </tree>
+	                            </field>
+	                        </page>   
+	                    </notebook>											
+					</sheet>                	
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_tenant_tree">
+            <field name="name">rdm.tenant.tree</field>
+            <field name="model">rdm.tenant</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Tenant">
+                    <field name="name"/>             
+                   	<field name="company"/>
+                    <field name="category"/>
+                    <field name="grade"/>                        
+                    <field name="participant"/>    
+                </tree>
+            </field>
+        </record>
+                               	
+		<!-- RDM/TENANT MESSAGE-->		
+        <record model="ir.ui.view" id="view_rdm_tenant_message_form">
+            <field name="name">rdm.tenant.message.form</field>
+            <field name="model">rdm.tenant.message</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Tenant Message">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="open,reply,done"/>
+                   </header>
+                    <group colspan="4">                            
+                        <field name="tenant_id"/>
+                        <field name="customer_id"/>
+                        <field name="subject"/>
+                        <field name="message"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_rdm_tenant_message_tree">
+            <field name="name">rdm.tenant.message.tree</field>
+            <field name="model">rdm.tenant.message</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Tenant Message">
+                     <field name="tenant_id"/>
+                     <field name="customer_id"/>
+                     <field name="subject"/>
+                     <field name="message"/>  
+                     <field name="state"/>
+                </tree>
+            </field>
+      	</record>
+
+        <!-- RDM/ACTION -->
+    	<!-- TENANT -->
+        <record model="ir.actions.act_window" id="action_rdm_tenant">
+            <field name="name">Tenant</field>
+            <field name="res_model">rdm.tenant</field>
+            <field name="view_mode">tree,form,pivot</field>
+    	</record>
+		
+		<!-- PIVOT TENANT -->
+		<record model="ir.ui.view" id="pivot_rdm_tenant">
+            <field name="name">rdm.tenant.pivot</field>
+            <field name="model">rdm.tenant</field>
+            <field name="arch" type="xml">
+                <pivot string="Pivot">
+					<field name="category" type="row"/>
+                    <field name="grade" type="col"/> 
+               </pivot>
+            </field>
+        </record>
+		<!-- END PIVOT TENANT -->
+		
+    	<!-- TENANT MESSAGE-->
+		<record model="ir.actions.act_window" id="action_rdm_tenant_message">
+            <field name="name">Tenant Message</field>
+            <field name="res_model">rdm.tenant.message</field>
+            <field name="view_mode">tree,form</field>
+    	</record>
+
+		<!--&lt;!&ndash; RDM/TENANT MESSAGE CATEGORY&ndash;&gt;		-->
+        <!--<record model="ir.ui.view" id="view_rdm_tenant_message_category_form">-->
+            <!--<field name="name">rdm.tenant.message.category.form</field>-->
+            <!--<field name="model">rdm.tenant.message.category</field>						-->
+            <!--<field name="type">form</field>						-->
+            <!--<field name="arch" type="xml">            -->
+                <!--<form string="Message Category">  -->
+                    <!--<group colspan="4">                            -->
+                        <!--<field name="name"/>-->
+                    <!--</group>-->
+                <!--</form>-->
+            <!--</field>-->
+        <!--</record>       -->
+        <!---->
+		<!--<record model="ir.ui.view" id="view_rdm_tenant_message_category_tree">-->
+            <!--<field name="name">rdm.tenant.message.category.tree</field>-->
+            <!--<field name="model">rdm.tenant.message.category</field>			-->
+            <!--<field name="type">tree</field>						-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree string="Tenant">-->
+                    <!--<field name="name"/>             -->
+                <!--</tree>-->
+            <!--</field>-->
+        <!--</record>        -->
+    	
+		<!-- TENANT MESSAGE CATEGORY-->
+		<!--<record model="ir.actions.act_window" id="action_rdm_tenant_message_category">-->
+            <!--<field name="name">Message Category</field>-->
+            <!--<field name="res_model">rdm.tenant.message.category</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+    	<!--</record>    	-->
+    	    	
+    </data>
+</odoo>

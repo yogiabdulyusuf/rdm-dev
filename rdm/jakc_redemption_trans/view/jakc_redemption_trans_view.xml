@@ -1,0 +1,354 @@
+<odoo>
+    <data>
+        <!-- RDM/TRANSACTION-->		
+        <record model="ir.ui.view" id="view_rdm_trans_form">
+            <field name="name">rdm.trans.form</field>
+            <field name="model">rdm.trans</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Transaction" >  
+                    <header>
+                        <button name="trans_close" string="Close" type="object" class="oe_highlight" states="open" confirm="Are you sure to close this transaction?"/>                                                
+                        <button name="print_receipt" String="Print" type="object" class="oe_highlight" states="done,req_delete,delete"/>                        
+                        <button name="trans_req_delete" String="Request For Delete" type="object" class="oe_highlight" states="done"/>
+                        <button name="trans_del_approve" String="Approve For Delete" type="object" class="oe_highlight" states="req_delete" groups="base.group_rdm_manager"/>
+                        <button name="trans_del_reject" String="Reject For Delete" type="object" class="oe_highlight" states="req_delete" groups="base.group_rdm_manager"/>                      
+                   		<field name="state" widget="statusbar" statusbar_visible="draft,request,ready,open,calculate,done,req_delete,delete"/>
+					</header>
+					<sheet>											
+						<group colspan="4">
+							<h1>
+								<field name="trans_id"/>   		
+							</h1>															
+						</group>						
+						<group colspan="4" string="Customer">
+							<h1>							
+								<field name="customer_id"  domain="[('state','=', 'active')]" options="{'no_create': True, 'no_create_edit':True}"/>
+							</h1>	
+						</group>																		
+						<group colspan="4" string="General information">							                         	                    		                      
+	                        <field name="type" readonly="1"/>	                         						                     
+	                        <field name="trans_date"/>	                       		    
+							<field name="printed"/>                            	
+	                    </group>            
+						<group colspan="2">
+							<group string="Amount and Item">
+		                        <field name="total_amount"/>		                        
+		                        <field name="total_item"/>       																
+							</group>
+							<group string="Coupon and Point">
+		                        <field name="total_coupon" attrs="{'invisible':[('type','=','point')]}"/>       
+		                        <field name="total_point"/>       
+							</group>														
+						</group>	                    
+						<notebook colspan="4">
+	                        <page string="Details">
+	                            <field name="trans_detail_ids" widget="one2many_list" nolabel="1">
+	                                <tree>
+	                                    <field name="trans_date"/>
+	                                    <field name="tenant_id" domain="[('state', '=', 'active')]" options="{'no_create': True, 'no_create_edit':True}"/>
+	                                    <field name="total_amount" widget="monetary"/>
+	                                    <field name="total_item"/>
+	                                    <field name="payment_type"/>
+	                                    <field name="bank_id" options="{'no_create': True, 'no_create_edit':True}"/>
+	                                    <field name="bank_card_id"/>                                    
+	                                    <field name="card_number"/>
+	                                    <field name="state"/>
+	                                </tree>
+	                            </field>
+	                        </page>              
+	                        <page string="Schemas">
+	                        	<field name="trans_schemas_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                            	<tree string="Schemas">
+	                            	    <field name="schemas_id"/>	                            	    	                                	
+	                                	<field name="total_coupon"/>	                                	
+	                                	<field name="total_point"/>	                                	
+	                                	<field name="state"/>                                                                                                                                                                                                                                      
+	                            	</tree>                    	                            	
+	                        	</field>
+	                        </page>	                        
+							<page string="Transaction Coupons">
+	                        	<field name="customer_coupon_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                            	<tree string="Coupons">                                                                                                	
+	                                	<field name="trans_type"/>	
+	                                	<field name="coupon"/>	                                	
+	                                	<field name="expired_date"/>
+	                                	<field name="state"/>                                                                                                                                                                                                                                      
+	                            	</tree>                    
+	                        	</field>
+	                    	</page>
+	                    	<page string="Transaction Points">
+	                        	<field name="customer_point_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                            	<tree string="Points">                                                                                                	
+	                                	<field name="trans_type"/>
+	                                	<field name="point"/>
+	                                	<field name="expired_date"/>
+	                                	<field name="state"/>                                                                                                                                                                                                                                      
+	                            	</tree>                    
+	                        	</field>
+	                    	</page>
+	                    	<page string="Transaction Rewards">
+	                        	<field name="customer_reward_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                            	<tree string="Rewards">                                                                                                	
+	                                	<field name="reward_id"/>	                                	
+	                            	</tree>                    
+	                        	</field>
+	                    	</page>				                                                								                    
+	                    					                                                								                    
+	                    </notebook>                                              												
+					</sheet>                   
+                </form>
+            </field>
+        </record>
+		
+        <record model="ir.ui.view" id="view_rdm_trans_tree">
+            <field name="name">rdm.trans.tree</field>
+            <field name="model">rdm.trans</field>			
+            <field name="type">tree</field>						
+            <field name="arch" type="xml">
+                <tree string="Transaction">
+					<field name="trans_id"/>                	
+                    <field name="customer_id"/>                        
+                    <field name="trans_date"/>                    
+                    <field name="total_amount"/>                     
+                    <field name="total_item"/>                            
+                    <field name="create_uid"/>                              
+ 					<field name="state"/>                   
+                </tree>
+            </field>
+        </record>
+               
+                
+		<record model="ir.ui.view" id="view_rdm_trans_detail_form">
+            <field name="name">rdm.trans.detail.form</field>
+            <field name="model">rdm.trans.detail</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Transaction Detail" >  
+                    <group colspan="4">                    	
+                        <field name="trans_date"/>            
+	                    <field name="tenant_id" domain="[('state', '=', 'active')]" options="{'no_create': True, 'no_create_edit':True}"/>
+                        <field name="total_amount"/>
+                        <field name="total_item"/>
+                        <field name="payment_type"/>
+                        <field name="bank_id" attrs="{'invisible':[('payment_type','==','cash')]}"/>
+                        <field name="bank_card_id" attrs="{'invisible':[('payment_type','==','cash')]}"/>                                             
+                       	<field name="card_number" attrs="{'invisible':[('payment_type','==','cash')]}"/>
+                    </group>                   
+                    <notebook>
+                    	<page string="Detail Coupons">
+	                    	<field name="trans_detail_coupon_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                       		<tree string="Coupons">                                                                                                	
+	                                <field name="trans_schemas_id">
+	                                	<field name="name_related"/>
+	                                </field>
+	                                <field name="valid_coupon"/>	                                
+	                                <field name="coupon"/>
+	                                <field name="basic"/>
+	                                <field name="multiple_ditotal"/>
+	                                <field name="multiple_terbesar"/>
+	                                <field name="add_ditotal"/>	                                
+	                                <field name="add_terbesar"/>
+	                            </tree>                    
+	                        </field>                    
+                    	</page>
+                    	<page string="Detail Points">
+	                    	<field name="trans_detail_point_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                       		<tree string="Points">                                                                                                	
+	                                <field name="trans_schemas_id">
+	                                	<field name="name_related"/>
+	                                </field>
+	                                <field name="valid_point"/>
+	                                <field name="point"/>
+	                                <field name="basic"/>
+	                                <field name="multiple_ditotal"/>
+	                                <field name="multiple_terbesar"/>
+	                                <field name="add_ditotal"/>
+	                                <field name="add_terbesar"/>	                               
+	                            </tree>                    
+	                        </field>                                        	
+                    	</page>
+                    </notebook>
+                </form>
+            </field>
+        </record>       
+        
+		<record model="ir.ui.view" id="view_rdm_trans_schemas_form">
+            <field name="name">rdm.trans.schemas.form</field>
+            <field name="model">rdm.trans.schemas</field>						
+            <field name="type">form</field>						
+            <field name="arch" type="xml">
+                <form string="Transaction Schemas" >  
+                    <group colspan="4">                    	
+                        <field name="schemas_id"/>                                                                                  
+                        <field name="total_coupon"/>
+                        <field name="total_point"/>
+                        <field name="remark"/>
+                        <field name="state"/>
+                    </group>
+                    <notebook>                    	
+                    	<page string="Transaction Coupons">
+	                    	<field name="trans_detail_coupon_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                       		<tree string="Coupons">                                                                                                		                                
+	                                <field name="valid_coupon"/>
+	                                <field name="coupon"/>	                               
+	                                <field name="priority"/>
+	                                <field name="basic"/>	                                
+	                                <field name="multiple_ditotal"/>
+	                                <field name="multiple_terbesar"/>
+	                                <field name="add_ditotal"/>	                                
+	                                <field name="add_terbesar"/>
+	                                <field name="state"/>
+	                            </tree>                    
+	                        </field>       
+                    	</page>
+                    	<page string="Transaction Points">
+							<field name="trans_detail_point_ids" widget="one2many_list" nolabel="1" readonly="1">
+	                       		<tree string="Points">                                                                                                	
+	                                <field name="valid_point"/>
+	                                <field name="point"/>	                                	  
+	                                <field name="priority"/>                              
+	                                <field name="basic"/>
+	                                <field name="multiple_ditotal"/>
+	                                <field name="multiple_terbesar"/>
+	                                <field name="add_ditotal"/>
+	                                <field name="add_terbesar"/>
+	                                <field name="state"/>	                               
+	                            </tree>                    
+	                        </field>                                        	
+                    	</page>
+                    </notebook>                 
+              	</form>
+            </field>
+        </record>       
+        
+                
+		<record model="ir.ui.view" id="view_rdm_trans_filter">
+            <field name="name">Transaction Search</field>
+            <field name="model">rdm.trans</field>
+            <field name="arch" type="xml">
+                <search string="Search Transaction">
+                	<field name="trans_id"/>
+                    <field name="trans_date"/>
+ 					<field name="customer_id"/>
+                    <filter icon="terp-camera_test" string="Open" name="status_open" domain="[('state','=','open')]" help="Open Status" />                                       
+                    <filter icon="terp-camera_test" string="Close" name="status_close" domain="[('state','=','done')]" help="Close Status" />  
+                    <filter icon="terp-camera_test" string="Promo" name="type_promo" domain="[('type','=','promo')]" help="Promo" />                                       
+                    <filter icon="terp-camera_test" string="Point" name="type_point" domain="[('type','=','point')]" help="Point" />                      	                 
+                    <group expand="0" string="Group By...">                        
+                        <filter string="Status" name="stauts" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}" />                        
+                    </group>
+                </search>
+            </field>
+        </record>   
+                
+        
+		<record id="view_rdm_trans_receipt_report_form" model="ir.ui.view">
+            <field name="name">Redemption Transaction Reciept Report</field>
+            <field name="model">rdm.trans.receipt.report</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form col="4" string="Redemption Transaction Receipt Report" >
+                    <group>
+                        <field name="id"/>                        
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Show" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>                                
+            </field>
+        </record>
+        
+
+        <!--&lt;!&ndash; RDM/SEQUENCE &ndash;&gt;-->
+        <!--&lt;!&ndash; TRANSACTION ID &ndash;&gt;       -->
+	    <!--&lt;!&ndash; REDEMPTION ID &ndash;&gt;    	-->
+        <!--<record id="sequence_type_rdm_trans_coupon" model="ir.sequence.type">-->
+            <!--<field name="name">Transaction Remption</field>-->
+            <!--<field name="code">rdm.trans.redemption.sequence</field>-->
+        <!--</record>-->
+
+        <!--<record id="sequence_rdm_trans_coupon" model="ir.sequence">-->
+            <!--<field name="name">Transaction Redemption</field>-->
+            <!--<field name="code">rdm.trans.redemption.sequence</field>-->
+			<!--<field name="prefix">RDM%(year)s%(month)s</field>-->
+            <!--<field name="padding" eval="10"/>-->
+            <!--<field name="number_increment">1</field>-->
+        <!--</record>-->
+
+		<!-- POINT ID -->
+        <!--<record id="sequence_type_rdm_trans_point" model="ir.sequence.type">-->
+            <!--<field name="name">Transaction Point</field>-->
+            <!--<field name="code">rdm.trans.point.sequence</field>-->
+        <!--</record>-->
+
+        <!--<record id="sequence_rdm_trans_point" model="ir.sequence">-->
+            <!--<field name="name">Transaction Point</field>-->
+            <!--<field name="code">rdm.trans.point.sequence</field>-->
+			<!--<field name="prefix">POI%(year)s%(month)s</field>-->
+            <!--<field name="padding" eval="10"/>-->
+            <!--<field name="number_increment">1</field>-->
+        <!--</record>-->
+                        
+        <!-- RDM/ACTION -->
+        <!-- PROMO -->
+		<record model="ir.actions.act_window" id="action_rdm_promo_trans">
+            <field name="name">Promo Transaction</field>
+            <field name="res_model">rdm.trans</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','promo')]</field>			           
+			<field name="context">{'default_type':'promo','search_default_status_open':1}</field>            
+        </record>
+        <!-- POINT -->
+		<record model="ir.actions.act_window" id="action_rdm_point_trans">
+            <field name="name">Point Transaction</field>
+            <field name="res_model">rdm.trans</field>
+            <field name="view_mode">tree,form</field>
+			<field name="domain">[('type','=','point')]</field>            
+			<field name="context">{'default_type':'point','search_default_status_open':1}</field>            
+        </record>        
+        
+        <!-- RDM/VIEW -->
+		<!-- PROMO -->
+		<record model="ir.actions.act_window.view" id="action_rdm_promo_trans_tree" >
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_rdm_trans_tree"/>             			        
+            <field name="act_window_id" ref="action_rdm_promo_trans"/>
+        </record>        
+        
+        <record model="ir.actions.act_window.view" id="action_rdm_promo_trans_form" >
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_rdm_trans_form"/> 		            		          
+            <field name="act_window_id" ref="action_rdm_promo_trans"/>
+        </record>
+        
+		<!-- POINT -->
+		<record model="ir.actions.act_window.view" id="action_rdm_point_trans_tree" >
+            <field name="sequence" eval="0"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_rdm_trans_tree"/>             			        
+            <field name="act_window_id" ref="action_rdm_point_trans"/>
+        </record>        
+        
+        <record model="ir.actions.act_window.view" id="action_rdm_point_trans_form" >
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_rdm_trans_form"/> 		            		          
+            <field name="act_window_id" ref="action_rdm_point_trans"/>
+        </record>
+        
+
+         <!-- REPORT -->
+        <record id="action_rdm_trans_receipt_report_form" model="ir.actions.act_window">
+            <field name="name">Redemption Transaction Reciept Report</field>
+            <field name="res_model">rdm.trans.receipt.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>                                        	              
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rdm_customer_manager,rdm.customer.manager,model_rdm_customer,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_customer_officer,rdm.customer.officer,model_rdm_customer,jakc_redemption.group_rdm_officer,1,1,1,0
+access_rdm_customer_operator,rdm.customer.operator,model_rdm_customer,jakc_redemption.group_rdm_operator,1,1,1,0
+
+access_rdm_customer_otp_manager,rdm.customer.otp.manager,model_rdm_customer_otp,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_customer_otp_officer,rdm.customer.otp.officer,model_rdm_customer_otp,jakc_redemption.group_rdm_officer,1,1,1,0
+access_rdm_customer_otp_operator,rdm.customer.otp.operator,model_rdm_customer_otp,jakc_redemption.group_rdm_operator,1,1,1,0
+
+access_rdm_customer_notif_manager,rdm.customer.notif.manager,model_rdm_customer_notif,jakc_redemption.group_rdm_manager,1,1,1,1
+access_rdm_customer_notif_officer,rdm.customer.notif.officer,model_rdm_customer_notif,jakc_redemption.group_rdm_officer,1,1,1,0
+access_rdm_customer_notif_operator,rdm.customer.notif.operator,model_rdm_customer_notif,jakc_redemption.group_rdm_operator,1,1,1,0
